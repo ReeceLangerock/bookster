@@ -5,6 +5,7 @@ var path = require('path');
 var port = process.env.PORT || 3000;
 var app = express();
 var config = require('./config');
+var passport = require('passport');
 
 mongoose.connect('mongodb://'+config.getMongoUser()+':'+config.getMongoPass()+'@ds111940.mlab.com:11940/bookster');
 //below mongoose.connect saved for when moving to heroku
@@ -22,13 +23,23 @@ app.set('view engine', 'ejs');
 
 
 //ROUTES
-//app.use('/', require('./controllers/index'));
+app.use('/', require('./controllers/index'));
+app.use('/user', require('./controllers/user'));
+app.use('/auth', require('./controllers/signin'));
 app.use(function (req, res, next) {
   res.status(404).render('404');
 })
 
-//launch
+//passport setup
+//app.use(session(process.env.passportSecret));
+app.use(passport.initialize());
+app.use(passport.session());
+app.use(function(req, res, next) {
+  res.locals.currentUser = req.user;
+  next();
+});
 
+//launch
 app.listen(port, function(){
   console.log(`Bookster listening on port ${port}!`);
 })
