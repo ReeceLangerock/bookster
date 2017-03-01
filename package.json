@@ -1,0 +1,19 @@
+{
+  "name": "book-trading-app",
+  "version": "1.0.0",
+  "description": "Book Trading App for FCC Backend Cert",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ReeceLangerock/bookster.git"
+  },
+  "author": "Reece Langerock",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ReeceLangerock/bookster/issues"
+  },
+  "homepage": "https://github.com/ReeceLangerock/bookster#readme"
+}
