@@ -1,1 +1,42 @@
-user
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <title>Bookster</title>
+    <link rel="stylesheet" type="text/css" href="./style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+</head>
+<html>
+
+
+<body>
+    <div class='container'>
+        <!--import navbar -->
+        <% if (authenticatedUser) { %>
+        <%- include ./partials/authNavigation.ejs %>
+        <%  } else { %>
+        <%- include ./partials/navigation.ejs %>
+        <%  } %>
+        <main>
+
+          <div class = "bookContainer">
+            <% for(var i = 0; i < 10; i++){ %>
+
+        <%    } %>
+
+        <form method = "POST" action = '/user'>
+          <input type = "submit">
+        </form>
+
+            <div>
+
+        </main>
+    </div>
+</body>
+<!--import footer -->
+<%- include ./partials/footer.ejs %>
+
+</html>

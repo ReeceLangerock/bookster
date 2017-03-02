@@ -1,0 +1,835 @@
+handleResponse({
+    "kind": "books#volumes",
+    "totalItems": 2753,
+    "items": [{
+            "kind": "books#volume",
+            "id": "tcSMCwAAQBAJ",
+            "etag": "MrdRj7Se5UM",
+            "selfLink": "https://www.googleapis.com/books/v1/volumes/tcSMCwAAQBAJ",
+            "volumeInfo": {
+                "title": "Harry Potter and the Cursed Child – Parts One and Two (Special Rehearsal Edition)",
+                "authors": [
+                    "J.K. Rowling",
+                    "John Tiffany",
+                    "Jack Thorne"
+                ],
+                "publisher": "Pottermore",
+                "publishedDate": "2016-07-31",
+                "description": "Based on an original new story by J.K. Rowling, Jack Thorne and John Tiffany, a new play by Jack Thorne, Harry Potter and the Cursed Child is the eighth story in the Harry Potter series and the first official Harry Potter story to be presented on stage. The play received its world premiere in London’s West End on 30th July 2016. It was always difficult being Harry Potter and it isn’t much easier now that he is an overworked employee of the Ministry of Magic, a husband and father of three school-age children. While Harry grapples with a past that refuses to stay where it belongs, his youngest son Albus must struggle with the weight of a family legacy he never wanted. As past and present fuse ominously, both father and son learn the uncomfortable truth: sometimes, darkness comes from unexpected places.",
+                "industryIdentifiers": [{
+                        "type": "ISBN_13",
+                        "identifier": "9781781107041"
+                    },
+                    {
+                        "type": "ISBN_10",
+                        "identifier": "1781107041"
+                    }
+                ],
+                "readingModes": {
+                    "text": true,
+                    "image": true
+                },
+                "pageCount": 320,
+                "printType": "BOOK",
+                "categories": [
+                    "Drama"
+                ],
+                "averageRating": 4.0,
+                "ratingsCount": 21,
+                "maturityRating": "NOT_MATURE",
+                "allowAnonLogging": true,
+                "contentVersion": "1.2.2.0.preview.3",
+                "imageLinks": {
+                    "smallThumbnail": "http://books.google.com/books/content?id=tcSMCwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+                    "thumbnail": "http://books.google.com/books/content?id=tcSMCwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+                },
+                "language": "en",
+                "previewLink": "http://books.google.com/books?id=tcSMCwAAQBAJ&printsec=frontcover&dq=harry+potter&hl=&cd=1&source=gbs_api",
+                "infoLink": "https://play.google.com/store/books/details?id=tcSMCwAAQBAJ&source=gbs_api",
+                "canonicalVolumeLink": "https://market.android.com/details?id=book-tcSMCwAAQBAJ"
+            },
+            "saleInfo": {
+                "country": "US",
+                "saleability": "FOR_SALE",
+                "isEbook": true,
+                "listPrice": {
+                    "amount": 14.99,
+                    "currencyCode": "USD"
+                },
+                "retailPrice": {
+                    "amount": 14.99,
+                    "currencyCode": "USD"
+                },
+                "buyLink": "https://play.google.com/store/books/details?id=tcSMCwAAQBAJ&rdid=book-tcSMCwAAQBAJ&rdot=1&source=gbs_api",
+                "offers": [{
+                    "finskyOfferType": 1,
+                    "listPrice": {
+                        "amountInMicros": 1.499E7,
+                        "currencyCode": "USD"
+                    },
+                    "retailPrice": {
+                        "amountInMicros": 1.499E7,
+                        "currencyCode": "USD"
+                    },
+                    "giftable": true
+                }]
+            },
+            "accessInfo": {
+                "country": "US",
+                "viewability": "PARTIAL",
+                "embeddable": true,
+                "publicDomain": false,
+                "textToSpeechPermission": "ALLOWED",
+                "epub": {
+                    "isAvailable": true,
+                    "acsTokenLink": "http://books.google.com/books/download/Harry_Potter_and_the_Cursed_Child_Parts-sample-epub.acsm?id=tcSMCwAAQBAJ&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+                },
+                "pdf": {
+                    "isAvailable": true,
+                    "acsTokenLink": "http://books.google.com/books/download/Harry_Potter_and_the_Cursed_Child_Parts-sample-pdf.acsm?id=tcSMCwAAQBAJ&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+                },
+                "webReaderLink": "http://books.google.com/books/reader?id=tcSMCwAAQBAJ&hl=&printsec=frontcover&output=reader&source=gbs_api",
+                "accessViewStatus": "SAMPLE",
+                "quoteSharingAllowed": false
+            },
+            "searchInfo": {
+                "textSnippet": "Based on an original new story by J.K. Rowling, Jack Thorne and John Tiffany, a new play by Jack Thorne, Harry Potter and the Cursed Child is the eighth story in the Harry Potter series and the first official Harry Potter story to be ..."
+            }
+        },
+        {
+            "kind": "books#volume",
+            "id": "wrOQLV6xB-wC",
+            "etag": "GopZo4kjK9k",
+            "selfLink": "https://www.googleapis.com/books/v1/volumes/wrOQLV6xB-wC",
+            "volumeInfo": {
+                "title": "Harry Potter and the Sorcerer's Stone",
+                "authors": [
+                    "J.K. Rowling"
+                ],
+                "publisher": "Pottermore",
+                "publishedDate": "2015-12-08",
+                "description": "\"Turning the envelope over, his hand trembling, Harry saw a purple wax seal bearing a coat of arms; a lion, an eagle, a badger and a snake surrounding a large letter 'H'.\" Harry Potter has never even heard of Hogwarts when the letters start dropping on the doormat at number four, Privet Drive. Addressed in green ink on yellowish parchment with a purple seal, they are swiftly confiscated by his grisly aunt and uncle. Then, on Harry's eleventh birthday, a great beetle-eyed giant of a man called Rubeus Hagrid bursts in with some astonishing news: Harry Potter is a wizard, and he has a place at Hogwarts School of Witchcraft and Wizardry. An incredible adventure is about to begin!",
+                "industryIdentifiers": [{
+                        "type": "ISBN_13",
+                        "identifier": "9781781100486"
+                    },
+                    {
+                        "type": "ISBN_10",
+                        "identifier": "1781100489"
+                    }
+                ],
+                "readingModes": {
+                    "text": true,
+                    "image": true
+                },
+                "pageCount": 309,
+                "printType": "BOOK",
+                "categories": [
+                    "Juvenile Fiction"
+                ],
+                "averageRating": 4.5,
+                "ratingsCount": 317,
+                "maturityRating": "NOT_MATURE",
+                "allowAnonLogging": true,
+                "contentVersion": "2.14.13.0.preview.3",
+                "imageLinks": {
+                    "smallThumbnail": "http://books.google.com/books/content?id=wrOQLV6xB-wC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+                    "thumbnail": "http://books.google.com/books/content?id=wrOQLV6xB-wC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+                },
+                "language": "en",
+                "previewLink": "http://books.google.com/books?id=wrOQLV6xB-wC&printsec=frontcover&dq=harry+potter&hl=&cd=2&source=gbs_api",
+                "infoLink": "https://play.google.com/store/books/details?id=wrOQLV6xB-wC&source=gbs_api",
+                "canonicalVolumeLink": "https://market.android.com/details?id=book-wrOQLV6xB-wC"
+            },
+            "saleInfo": {
+                "country": "US",
+                "saleability": "FOR_SALE",
+                "isEbook": true,
+                "listPrice": {
+                    "amount": 8.99,
+                    "currencyCode": "USD"
+                },
+                "retailPrice": {
+                    "amount": 8.99,
+                    "currencyCode": "USD"
+                },
+                "buyLink": "https://play.google.com/store/books/details?id=wrOQLV6xB-wC&rdid=book-wrOQLV6xB-wC&rdot=1&source=gbs_api",
+                "offers": [{
+                    "finskyOfferType": 1,
+                    "listPrice": {
+                        "amountInMicros": 8990000.0,
+                        "currencyCode": "USD"
+                    },
+                    "retailPrice": {
+                        "amountInMicros": 8990000.0,
+                        "currencyCode": "USD"
+                    },
+                    "giftable": true
+                }]
+            },
+            "accessInfo": {
+                "country": "US",
+                "viewability": "PARTIAL",
+                "embeddable": true,
+                "publicDomain": false,
+                "textToSpeechPermission": "ALLOWED",
+                "epub": {
+                    "isAvailable": true,
+                    "acsTokenLink": "http://books.google.com/books/download/Harry_Potter_and_the_Sorcerer_s_Stone-sample-epub.acsm?id=wrOQLV6xB-wC&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+                },
+                "pdf": {
+                    "isAvailable": true,
+                    "acsTokenLink": "http://books.google.com/books/download/Harry_Potter_and_the_Sorcerer_s_Stone-sample-pdf.acsm?id=wrOQLV6xB-wC&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+                },
+                "webReaderLink": "http://books.google.com/books/reader?id=wrOQLV6xB-wC&hl=&printsec=frontcover&output=reader&source=gbs_api",
+                "accessViewStatus": "SAMPLE",
+                "quoteSharingAllowed": false
+            },
+            "searchInfo": {
+                "textSnippet": "&quot;Turning the envelope over, his hand trembling, Harry saw a purple wax seal bearing a coat of arms; a lion, an eagle, a badger and a snake surrounding a large letter &#39;H&#39;.&quot; Harry Potter has never even heard of Hogwarts when the letters start ..."
+            }
+        },
+        {
+            "kind": "books#volume",
+            "id": "hBbCjwEACAAJ",
+            "etag": "TuRmNQSuKMQ",
+            "selfLink": "https://www.googleapis.com/books/v1/volumes/hBbCjwEACAAJ",
+            "volumeInfo": {
+                "title": "Harry Potter and the Prisoner of Azkaban",
+                "authors": [
+                    "J. K. Rowling"
+                ],
+                "publishedDate": "2016-06-22",
+                "description": "'Welcome to the Knight Bus, emergency transport for the stranded witch or wizard. Just stick out your wand hand, step on board and we can take you anywhere you want to go.' When the Knight Bus crashes through the darkness and screeches to a halt in front of him, it's the start of another far from ordinary year at Hogwarts for Harry Potter. Sirius Black, escaped mass-murderer and follower of Lord Voldemort is on the run – and they say he is coming after Harry. In his first ever Divination class, Professor Trelawney sees an omen of death in Harry's tea leaves … But perhaps most terrifying of all are the Dementors patrolling the school grounds, with their soul-sucking Kiss … This gift edition hardback, presented in a beautiful foiled slipcase decorated with brand new line art by Jonny Duddle, will delight readers as the plot thickens and the dangers multiply in Harry's third year at Hogwarts.",
+                "industryIdentifiers": [{
+                        "type": "ISBN_10",
+                        "identifier": "1408869136"
+                    },
+                    {
+                        "type": "ISBN_13",
+                        "identifier": "9781408869130"
+                    }
+                ],
+                "readingModes": {
+                    "text": false,
+                    "image": false
+                },
+                "pageCount": 480,
+                "printType": "BOOK",
+                "averageRating": 4.5,
+                "ratingsCount": 277,
+                "maturityRating": "NOT_MATURE",
+                "allowAnonLogging": false,
+                "contentVersion": "preview-1.0.0",
+                "imageLinks": {
+                    "smallThumbnail": "http://books.google.com/books/content?id=hBbCjwEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+                    "thumbnail": "http://books.google.com/books/content?id=hBbCjwEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+                },
+                "language": "en",
+                "previewLink": "http://books.google.com/books?id=hBbCjwEACAAJ&dq=harry+potter&hl=&cd=3&source=gbs_api",
+                "infoLink": "http://books.google.com/books?id=hBbCjwEACAAJ&dq=harry+potter&hl=&source=gbs_api",
+                "canonicalVolumeLink": "http://books.google.com/books/about/Harry_Potter_and_the_Prisoner_of_Azkaban.html?hl=&id=hBbCjwEACAAJ"
+            },
+            "saleInfo": {
+                "country": "US",
+                "saleability": "NOT_FOR_SALE",
+                "isEbook": false
+            },
+            "accessInfo": {
+                "country": "US",
+                "viewability": "NO_PAGES",
+                "embeddable": false,
+                "publicDomain": false,
+                "textToSpeechPermission": "ALLOWED",
+                "epub": {
+                    "isAvailable": false
+                },
+                "pdf": {
+                    "isAvailable": false
+                },
+                "webReaderLink": "http://books.google.com/books/reader?id=hBbCjwEACAAJ&hl=&printsec=frontcover&output=reader&source=gbs_api",
+                "accessViewStatus": "NONE",
+                "quoteSharingAllowed": false
+            }
+        },
+        {
+            "kind": "books#volume",
+            "id": "lMM4jgEACAAJ",
+            "etag": "M414vz3xVmY",
+            "selfLink": "https://www.googleapis.com/books/v1/volumes/lMM4jgEACAAJ",
+            "volumeInfo": {
+                "title": "Harry Potter Coloring Book",
+                "authors": [
+                    "Inc. Scholastic"
+                ],
+                "publisher": "Scholastic Incorporated",
+                "publishedDate": "2015-11-10",
+                "description": "Packed with stunning pieces of artwork from the Warner Bros. archive, this deluxe coloring book gives fans the chance to color in the vivid settings and beloved characters of J.K. Rowling's wizarding world. Containing intricate line drawings used in the making of the Harry Potter films, this coloring book includes fan-favorite scenes, creatures, and characters: from Dobby and baby Norbert to Quidditch games and the unforgettable final battle between Harry and Lord Voldemort. Unique and interactive, Harry Potter: The Official Coloring Book is a perfect collector's item for all fans of the blockbuster saga--whether it's for those who grew up with Harry, Ron, and Hermione, or those who are discovering the magic for the very first time.",
+                "industryIdentifiers": [{
+                        "type": "ISBN_10",
+                        "identifier": "1338029991"
+                    },
+                    {
+                        "type": "ISBN_13",
+                        "identifier": "9781338029994"
+                    }
+                ],
+                "readingModes": {
+                    "text": false,
+                    "image": false
+                },
+                "pageCount": 96,
+                "printType": "BOOK",
+                "categories": [
+                    "Juvenile Fiction"
+                ],
+                "averageRating": 5.0,
+                "ratingsCount": 2,
+                "maturityRating": "NOT_MATURE",
+                "allowAnonLogging": false,
+                "contentVersion": "preview-1.0.0",
+                "imageLinks": {
+                    "smallThumbnail": "http://books.google.com/books/content?id=lMM4jgEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+                    "thumbnail": "http://books.google.com/books/content?id=lMM4jgEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+                },
+                "language": "en",
+                "previewLink": "http://books.google.com/books?id=lMM4jgEACAAJ&dq=harry+potter&hl=&cd=4&source=gbs_api",
+                "infoLink": "http://books.google.com/books?id=lMM4jgEACAAJ&dq=harry+potter&hl=&source=gbs_api",
+                "canonicalVolumeLink": "http://books.google.com/books/about/Harry_Potter_Coloring_Book.html?hl=&id=lMM4jgEACAAJ"
+            },
+            "saleInfo": {
+                "country": "US",
+                "saleability": "NOT_FOR_SALE",
+                "isEbook": false
+            },
+            "accessInfo": {
+                "country": "US",
+                "viewability": "NO_PAGES",
+                "embeddable": false,
+                "publicDomain": false,
+                "textToSpeechPermission": "ALLOWED",
+                "epub": {
+                    "isAvailable": false
+                },
+                "pdf": {
+                    "isAvailable": false
+                },
+                "webReaderLink": "http://books.google.com/books/reader?id=lMM4jgEACAAJ&hl=&printsec=frontcover&output=reader&source=gbs_api",
+                "accessViewStatus": "NONE",
+                "quoteSharingAllowed": false
+            },
+            "searchInfo": {
+                "textSnippet": "Packed with stunning pieces of artwork from the Warner Bros. archive, this deluxe coloring book gives fans the chance to color in the vivid settings and beloved characters of J.K. Rowling&#39;s wizarding world."
+            }
+        },
+        {
+            "kind": "books#volume",
+            "id": "5iTebBW-w7QC",
+            "etag": "wypX2iZCiDA",
+            "selfLink": "https://www.googleapis.com/books/v1/volumes/5iTebBW-w7QC",
+            "volumeInfo": {
+                "title": "Harry Potter and the Chamber of Secrets",
+                "authors": [
+                    "J.K. Rowling"
+                ],
+                "publisher": "Pottermore",
+                "publishedDate": "2015-12-08",
+                "description": "\"'There is a plot, Harry Potter. A plot to make most terrible things happen at Hogwarts School of Witchcraft and Wizardry this year.'\" Harry Potter's summer has included the worst birthday ever, doomy warnings from a house-elf called Dobby, and rescue from the Dursleys by his friend Ron Weasley in a magical flying car! Back at Hogwarts School of Witchcraft and Wizardry for his second year, Harry hears strange whispers echo through empty corridors - and then the attacks start. Students are found as though turned to stone... Dobby's sinister predictions seem to be coming true.",
+                "industryIdentifiers": [{
+                        "type": "ISBN_13",
+                        "identifier": "9781781100509"
+                    },
+                    {
+                        "type": "ISBN_10",
+                        "identifier": "1781100500"
+                    }
+                ],
+                "readingModes": {
+                    "text": true,
+                    "image": true
+                },
+                "pageCount": 341,
+                "printType": "BOOK",
+                "categories": [
+                    "Juvenile Fiction"
+                ],
+                "averageRating": 4.5,
+                "ratingsCount": 146,
+                "maturityRating": "NOT_MATURE",
+                "allowAnonLogging": true,
+                "contentVersion": "2.8.7.0.preview.3",
+                "imageLinks": {
+                    "smallThumbnail": "http://books.google.com/books/content?id=5iTebBW-w7QC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+                    "thumbnail": "http://books.google.com/books/content?id=5iTebBW-w7QC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+                },
+                "language": "en",
+                "previewLink": "http://books.google.com/books?id=5iTebBW-w7QC&printsec=frontcover&dq=harry+potter&hl=&cd=5&source=gbs_api",
+                "infoLink": "https://play.google.com/store/books/details?id=5iTebBW-w7QC&source=gbs_api",
+                "canonicalVolumeLink": "https://market.android.com/details?id=book-5iTebBW-w7QC"
+            },
+            "saleInfo": {
+                "country": "US",
+                "saleability": "FOR_SALE",
+                "isEbook": true,
+                "listPrice": {
+                    "amount": 8.99,
+                    "currencyCode": "USD"
+                },
+                "retailPrice": {
+                    "amount": 8.99,
+                    "currencyCode": "USD"
+                },
+                "buyLink": "https://play.google.com/store/books/details?id=5iTebBW-w7QC&rdid=book-5iTebBW-w7QC&rdot=1&source=gbs_api",
+                "offers": [{
+                    "finskyOfferType": 1,
+                    "listPrice": {
+                        "amountInMicros": 8990000.0,
+                        "currencyCode": "USD"
+                    },
+                    "retailPrice": {
+                        "amountInMicros": 8990000.0,
+                        "currencyCode": "USD"
+                    },
+                    "giftable": true
+                }]
+            },
+            "accessInfo": {
+                "country": "US",
+                "viewability": "PARTIAL",
+                "embeddable": true,
+                "publicDomain": false,
+                "textToSpeechPermission": "ALLOWED",
+                "epub": {
+                    "isAvailable": true,
+                    "acsTokenLink": "http://books.google.com/books/download/Harry_Potter_and_the_Chamber_of_Secrets-sample-epub.acsm?id=5iTebBW-w7QC&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+                },
+                "pdf": {
+                    "isAvailable": true,
+                    "acsTokenLink": "http://books.google.com/books/download/Harry_Potter_and_the_Chamber_of_Secrets-sample-pdf.acsm?id=5iTebBW-w7QC&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+                },
+                "webReaderLink": "http://books.google.com/books/reader?id=5iTebBW-w7QC&hl=&printsec=frontcover&output=reader&source=gbs_api",
+                "accessViewStatus": "SAMPLE",
+                "quoteSharingAllowed": false
+            },
+            "searchInfo": {
+                "textSnippet": "&quot;&#39;There is a plot, Harry Potter."
+            }
+        },
+        {
+            "kind": "books#volume",
+            "id": "HO5-s0M_Yl8C",
+            "etag": "f8ETz4qNNYQ",
+            "selfLink": "https://www.googleapis.com/books/v1/volumes/HO5-s0M_Yl8C",
+            "volumeInfo": {
+                "title": "Harry Potter, You're the Best!",
+                "subtitle": "A Tribute from Fans the World Over",
+                "authors": [
+                    "Sharon Moore"
+                ],
+                "publisher": "St. Martin's Griffin",
+                "publishedDate": "2001-08-25",
+                "description": "After St. Martin's published We Love Harry Potter! We'll tell you why we got hundreds of letters from fans around the world who wanted to offer their thoughts about the books they love. Their fertile imaginations have led them to share their creative takes on Harry: their opinions about the plots and characters, their wishes for the next book and the upcoming, highly ancipated movie version, their ideas for playing Harry, Ron, Hermione, and all their other favorite characters, and much more! The collected letters are a delightful testament to how widespread and beloved the Harry Potter phenomenon has become.",
+                "industryIdentifiers": [{
+                        "type": "ISBN_13",
+                        "identifier": "9781429978217"
+                    },
+                    {
+                        "type": "ISBN_10",
+                        "identifier": "142997821X"
+                    }
+                ],
+                "readingModes": {
+                    "text": true,
+                    "image": false
+                },
+                "pageCount": 128,
+                "printType": "BOOK",
+                "categories": [
+                    "Juvenile Nonfiction"
+                ],
+                "maturityRating": "NOT_MATURE",
+                "allowAnonLogging": false,
+                "contentVersion": "3.4.2.0.preview.2",
+                "imageLinks": {
+                    "smallThumbnail": "http://books.google.com/books/content?id=HO5-s0M_Yl8C&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+                    "thumbnail": "http://books.google.com/books/content?id=HO5-s0M_Yl8C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+                },
+                "language": "en",
+                "previewLink": "http://books.google.com/books?id=HO5-s0M_Yl8C&printsec=frontcover&dq=harry+potter&hl=&cd=6&source=gbs_api",
+                "infoLink": "https://play.google.com/store/books/details?id=HO5-s0M_Yl8C&source=gbs_api",
+                "canonicalVolumeLink": "https://market.android.com/details?id=book-HO5-s0M_Yl8C"
+            },
+            "saleInfo": {
+                "country": "US",
+                "saleability": "FOR_SALE",
+                "isEbook": true,
+                "listPrice": {
+                    "amount": 7.99,
+                    "currencyCode": "USD"
+                },
+                "retailPrice": {
+                    "amount": 7.99,
+                    "currencyCode": "USD"
+                },
+                "buyLink": "https://play.google.com/store/books/details?id=HO5-s0M_Yl8C&rdid=book-HO5-s0M_Yl8C&rdot=1&source=gbs_api",
+                "offers": [{
+                    "finskyOfferType": 1,
+                    "listPrice": {
+                        "amountInMicros": 7990000.0,
+                        "currencyCode": "USD"
+                    },
+                    "retailPrice": {
+                        "amountInMicros": 7990000.0,
+                        "currencyCode": "USD"
+                    },
+                    "giftable": true
+                }]
+            },
+            "accessInfo": {
+                "country": "US",
+                "viewability": "PARTIAL",
+                "embeddable": true,
+                "publicDomain": false,
+                "textToSpeechPermission": "ALLOWED",
+                "epub": {
+                    "isAvailable": true,
+                    "acsTokenLink": "http://books.google.com/books/download/Harry_Potter_You_re_the_Best-sample-epub.acsm?id=HO5-s0M_Yl8C&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+                },
+                "pdf": {
+                    "isAvailable": false
+                },
+                "webReaderLink": "http://books.google.com/books/reader?id=HO5-s0M_Yl8C&hl=&printsec=frontcover&output=reader&source=gbs_api",
+                "accessViewStatus": "SAMPLE",
+                "quoteSharingAllowed": false
+            },
+            "searchInfo": {
+                "textSnippet": "After St. Martin&#39;s published We Love Harry Potter! We&#39;ll tell you why we got hundreds of letters from fans around the world who wanted to offer their thoughts about the books they love."
+            }
+        },
+        {
+            "kind": "books#volume",
+            "id": "_oaAHiFOZmgC",
+            "etag": "NoUIWM5iG4I",
+            "selfLink": "https://www.googleapis.com/books/v1/volumes/_oaAHiFOZmgC",
+            "volumeInfo": {
+                "title": "Harry Potter and the Deathly Hallows",
+                "authors": [
+                    "J.K. Rowling"
+                ],
+                "publisher": "Pottermore",
+                "publishedDate": "2015-12-08",
+                "description": "\"'Give me Harry Potter,' said Voldemort's voice, 'and none shall be harmed. Give me Harry Potter, and I shall leave the school untouched. Give me Harry Potter, and you will be rewarded.'\" As he climbs into the sidecar of Hagrid's motorbike and takes to the skies, leaving Privet Drive for the last time, Harry Potter knows that Lord Voldemort and the Death Eaters are not far behind. The protective charm that has kept Harry safe until now is broken, but he cannot keep hiding. The Dark Lord is breathing fear into everything Harry loves and to stop him Harry will have to find and destroy the remaining Horcruxes. The final battle must begin - Harry must stand and face his enemy...",
+                "industryIdentifiers": [{
+                        "type": "ISBN_13",
+                        "identifier": "9781781102435"
+                    },
+                    {
+                        "type": "ISBN_10",
+                        "identifier": "1781102430"
+                    }
+                ],
+                "readingModes": {
+                    "text": true,
+                    "image": true
+                },
+                "pageCount": 784,
+                "printType": "BOOK",
+                "categories": [
+                    "Juvenile Fiction"
+                ],
+                "averageRating": 4.5,
+                "ratingsCount": 197,
+                "maturityRating": "NOT_MATURE",
+                "allowAnonLogging": true,
+                "contentVersion": "1.5.5.0.preview.3",
+                "imageLinks": {
+                    "smallThumbnail": "http://books.google.com/books/content?id=_oaAHiFOZmgC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+                    "thumbnail": "http://books.google.com/books/content?id=_oaAHiFOZmgC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+                },
+                "language": "en",
+                "previewLink": "http://books.google.com/books?id=_oaAHiFOZmgC&printsec=frontcover&dq=harry+potter&hl=&cd=7&source=gbs_api",
+                "infoLink": "https://play.google.com/store/books/details?id=_oaAHiFOZmgC&source=gbs_api",
+                "canonicalVolumeLink": "https://market.android.com/details?id=book-_oaAHiFOZmgC"
+            },
+            "saleInfo": {
+                "country": "US",
+                "saleability": "FOR_SALE",
+                "isEbook": true,
+                "listPrice": {
+                    "amount": 8.99,
+                    "currencyCode": "USD"
+                },
+                "retailPrice": {
+                    "amount": 8.99,
+                    "currencyCode": "USD"
+                },
+                "buyLink": "https://play.google.com/store/books/details?id=_oaAHiFOZmgC&rdid=book-_oaAHiFOZmgC&rdot=1&source=gbs_api",
+                "offers": [{
+                    "finskyOfferType": 1,
+                    "listPrice": {
+                        "amountInMicros": 8990000.0,
+                        "currencyCode": "USD"
+                    },
+                    "retailPrice": {
+                        "amountInMicros": 8990000.0,
+                        "currencyCode": "USD"
+                    },
+                    "giftable": true
+                }]
+            },
+            "accessInfo": {
+                "country": "US",
+                "viewability": "PARTIAL",
+                "embeddable": true,
+                "publicDomain": false,
+                "textToSpeechPermission": "ALLOWED",
+                "epub": {
+                    "isAvailable": true,
+                    "acsTokenLink": "http://books.google.com/books/download/Harry_Potter_and_the_Deathly_Hallows-sample-epub.acsm?id=_oaAHiFOZmgC&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+                },
+                "pdf": {
+                    "isAvailable": true,
+                    "acsTokenLink": "http://books.google.com/books/download/Harry_Potter_and_the_Deathly_Hallows-sample-pdf.acsm?id=_oaAHiFOZmgC&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+                },
+                "webReaderLink": "http://books.google.com/books/reader?id=_oaAHiFOZmgC&hl=&printsec=frontcover&output=reader&source=gbs_api",
+                "accessViewStatus": "SAMPLE",
+                "quoteSharingAllowed": false
+            },
+            "searchInfo": {
+                "textSnippet": "&quot;&#39;Give me Harry Potter,&#39; said Voldemort&#39;s voice, &#39;and none shall be harmed."
+            }
+        },
+        {
+            "kind": "books#volume",
+            "id": "H9UJmPTY0LIC",
+            "etag": "rsrUHIsWJLA",
+            "selfLink": "https://www.googleapis.com/books/v1/volumes/H9UJmPTY0LIC",
+            "volumeInfo": {
+                "title": "Harry Potter and Philosophy",
+                "subtitle": "If Aristotle Ran Hogwarts",
+                "authors": [
+                    "Associate Professor of Philosophy David Baggett",
+                    "William Irwin"
+                ],
+                "publisher": "ReadHowYouWant.com",
+                "publishedDate": "2010-10-01",
+                "description": "You don't need a diploma in arithmancy, the friendship of a hippogriff, or even a Hogwarts Library card to discover amazing and arcane secrets in the labyrinthine world of Harry Potter. In the book you now hold in your hands (or for more advanced students, the book you have levitated into a suitable position while you feed snacks to your owl), seventeen philosophical scholars unlock some of Hogwarts secret panels, displaying fresh insights enlightening both for sorcerers and for the more discerning Muggles. Among the occult lore here revealed, behold the best recipe for true courage, proof that self-deception does not yield happiness, how ethics can be applied to the branch of technology known as magic, why the Mirror of Erised isn't adequate for real life, whether prophecy rules out free choice, and what dementors and boggarts can teach us about joy, fear, and the soul. All the pages of this book are acid-free and have been individually bewitched with an anti-befuddlement incantation. Dont forget to keep your wand primed and read between the lines. Failure to observe these precautions may invite the malign influence of Vol sorry, He Who Must Not Be Named. ''Harry Potter and Philosophy is the most enjoyable HP spin-off Ive read and Ive read most of them. Some chapters are so full of good reflections, clear thinking, and reliable scholarship, I couldnt resist reading entire passages aloud. Our family plans to read these thought-provoking essays at the dinner table, sparking intelligent conversation with our teen- and college-aged children Harry Potter fans all.''",
+                "industryIdentifiers": [{
+                        "type": "ISBN_13",
+                        "identifier": "9781459601055"
+                    },
+                    {
+                        "type": "ISBN_10",
+                        "identifier": "145960105X"
+                    }
+                ],
+                "readingModes": {
+                    "text": false,
+                    "image": true
+                },
+                "pageCount": 404,
+                "printType": "BOOK",
+                "maturityRating": "NOT_MATURE",
+                "allowAnonLogging": false,
+                "contentVersion": "0.0.1.0.preview.1",
+                "imageLinks": {
+                    "smallThumbnail": "http://books.google.com/books/content?id=H9UJmPTY0LIC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+                    "thumbnail": "http://books.google.com/books/content?id=H9UJmPTY0LIC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+                },
+                "language": "en",
+                "previewLink": "http://books.google.com/books?id=H9UJmPTY0LIC&printsec=frontcover&dq=harry+potter&hl=&cd=8&source=gbs_api",
+                "infoLink": "http://books.google.com/books?id=H9UJmPTY0LIC&dq=harry+potter&hl=&source=gbs_api",
+                "canonicalVolumeLink": "http://books.google.com/books/about/Harry_Potter_and_Philosophy.html?hl=&id=H9UJmPTY0LIC"
+            },
+            "saleInfo": {
+                "country": "US",
+                "saleability": "NOT_FOR_SALE",
+                "isEbook": false
+            },
+            "accessInfo": {
+                "country": "US",
+                "viewability": "PARTIAL",
+                "embeddable": true,
+                "publicDomain": false,
+                "textToSpeechPermission": "ALLOWED_FOR_ACCESSIBILITY",
+                "epub": {
+                    "isAvailable": false
+                },
+                "pdf": {
+                    "isAvailable": false
+                },
+                "webReaderLink": "http://books.google.com/books/reader?id=H9UJmPTY0LIC&hl=&printsec=frontcover&output=reader&source=gbs_api",
+                "accessViewStatus": "SAMPLE",
+                "quoteSharingAllowed": false
+            },
+            "searchInfo": {
+                "textSnippet": "All the pages of this book are acid-free and have been individually bewitched with an anti-befuddlement incantation. Dont forget to keep your wand primed and read between the lines."
+            }
+        },
+        {
+            "kind": "books#volume",
+            "id": "R7YsowJI9-IC",
+            "etag": "0rQUOFY1EKQ",
+            "selfLink": "https://www.googleapis.com/books/v1/volumes/R7YsowJI9-IC",
+            "volumeInfo": {
+                "title": "Harry Potter and the Half-Blood Prince",
+                "authors": [
+                    "J.K. Rowling"
+                ],
+                "publisher": "Pottermore",
+                "publishedDate": "2015-12-08",
+                "description": "\"There it was, hanging in the sky above the school: the blazing green skull with a serpent tongue, the mark Death Eaters left behind whenever they had entered a building... wherever they had murdered...\" When Dumbledore arrives at Privet Drive one summer night to collect Harry Potter, his wand hand is blackened and shrivelled, but he does not reveal why. Secrets and suspicion are spreading through the wizarding world, and Hogwarts itself is not safe. Harry is convinced that Malfoy bears the Dark Mark: there is a Death Eater amongst them. Harry will need powerful magic and true friends as he explores Voldemort's darkest secrets, and Dumbledore prepares him to face his destiny...",
+                "industryIdentifiers": [{
+                        "type": "ISBN_13",
+                        "identifier": "9781781100547"
+                    },
+                    {
+                        "type": "ISBN_10",
+                        "identifier": "1781100543"
+                    }
+                ],
+                "readingModes": {
+                    "text": true,
+                    "image": true
+                },
+                "pageCount": 652,
+                "printType": "BOOK",
+                "categories": [
+                    "Juvenile Fiction"
+                ],
+                "averageRating": 4.5,
+                "ratingsCount": 83,
+                "maturityRating": "NOT_MATURE",
+                "allowAnonLogging": true,
+                "contentVersion": "1.5.5.0.preview.3",
+                "imageLinks": {
+                    "smallThumbnail": "http://books.google.com/books/content?id=R7YsowJI9-IC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+                    "thumbnail": "http://books.google.com/books/content?id=R7YsowJI9-IC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+                },
+                "language": "en",
+                "previewLink": "http://books.google.com/books?id=R7YsowJI9-IC&printsec=frontcover&dq=harry+potter&hl=&cd=9&source=gbs_api",
+                "infoLink": "https://play.google.com/store/books/details?id=R7YsowJI9-IC&source=gbs_api",
+                "canonicalVolumeLink": "https://market.android.com/details?id=book-R7YsowJI9-IC"
+            },
+            "saleInfo": {
+                "country": "US",
+                "saleability": "FOR_SALE",
+                "isEbook": true,
+                "listPrice": {
+                    "amount": 8.99,
+                    "currencyCode": "USD"
+                },
+                "retailPrice": {
+                    "amount": 8.99,
+                    "currencyCode": "USD"
+                },
+                "buyLink": "https://play.google.com/store/books/details?id=R7YsowJI9-IC&rdid=book-R7YsowJI9-IC&rdot=1&source=gbs_api",
+                "offers": [{
+                    "finskyOfferType": 1,
+                    "listPrice": {
+                        "amountInMicros": 8990000.0,
+                        "currencyCode": "USD"
+                    },
+                    "retailPrice": {
+                        "amountInMicros": 8990000.0,
+                        "currencyCode": "USD"
+                    },
+                    "giftable": true
+                }]
+            },
+            "accessInfo": {
+                "country": "US",
+                "viewability": "PARTIAL",
+                "embeddable": true,
+                "publicDomain": false,
+                "textToSpeechPermission": "ALLOWED",
+                "epub": {
+                    "isAvailable": true,
+                    "acsTokenLink": "http://books.google.com/books/download/Harry_Potter_and_the_Half_Blood_Prince-sample-epub.acsm?id=R7YsowJI9-IC&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+                },
+                "pdf": {
+                    "isAvailable": true,
+                    "acsTokenLink": "http://books.google.com/books/download/Harry_Potter_and_the_Half_Blood_Prince-sample-pdf.acsm?id=R7YsowJI9-IC&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+                },
+                "webReaderLink": "http://books.google.com/books/reader?id=R7YsowJI9-IC&hl=&printsec=frontcover&output=reader&source=gbs_api",
+                "accessViewStatus": "SAMPLE",
+                "quoteSharingAllowed": false
+            },
+            "searchInfo": {
+                "textSnippet": "&quot;There it was, hanging in the sky above the school: the blazing green skull with a serpent tongue, the mark Death Eaters left behind whenever they had entered a building... wherever they had murdered."
+            }
+        },
+        {
+            "kind": "books#volume",
+            "id": "iO5pApw2JycC",
+            "etag": "vRJcup1G/3M",
+            "selfLink": "https://www.googleapis.com/books/v1/volumes/iO5pApw2JycC",
+            "volumeInfo": {
+                "title": "The Ivory Tower and Harry Potter",
+                "subtitle": "Perspectives on a Literary Phenomenon",
+                "authors": [
+                    "Lana A. Whited"
+                ],
+                "publisher": "University of Missouri Press",
+                "publishedDate": "2004",
+                "description": "Now available in paper, The Ivory Tower and Harry Potter is the first book-length analysis of J. K. Rowling's work from a broad range of perspectives within literature, folklore, psychology, sociology, and popular culture. A significant portion of the book explores the Harry Potter series' literary ancestors, including magic and fantasy works by Ursula K. LeGuin, Monica Furlong, Jill Murphy, and others, as well as previous works about the British boarding school experience. Other chapters explore the moral and ethical dimensions of Harry's world, including objections to the series raised within some religious circles. In her new epilogue, Lana A. Whited brings this volume up to date by covering Rowling's latest book, Harry Potter and the Order of the Phoenix.",
+                "industryIdentifiers": [{
+                        "type": "ISBN_10",
+                        "identifier": "0826215491"
+                    },
+                    {
+                        "type": "ISBN_13",
+                        "identifier": "9780826215499"
+                    }
+                ],
+                "readingModes": {
+                    "text": true,
+                    "image": true
+                },
+                "pageCount": 418,
+                "printType": "BOOK",
+                "categories": [
+                    "Literary Criticism"
+                ],
+                "averageRating": 4.5,
+                "ratingsCount": 13,
+                "maturityRating": "NOT_MATURE",
+                "allowAnonLogging": false,
+                "contentVersion": "2.0.3.0.preview.3",
+                "imageLinks": {
+                    "smallThumbnail": "http://books.google.com/books/content?id=iO5pApw2JycC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+                    "thumbnail": "http://books.google.com/books/content?id=iO5pApw2JycC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+                },
+                "language": "en",
+                "previewLink": "http://books.google.com/books?id=iO5pApw2JycC&printsec=frontcover&dq=harry+potter&hl=&cd=10&source=gbs_api",
+                "infoLink": "http://books.google.com/books?id=iO5pApw2JycC&dq=harry+potter&hl=&source=gbs_api",
+                "canonicalVolumeLink": "http://books.google.com/books/about/The_Ivory_Tower_and_Harry_Potter.html?hl=&id=iO5pApw2JycC"
+            },
+            "saleInfo": {
+                "country": "US",
+                "saleability": "NOT_FOR_SALE",
+                "isEbook": false
+            },
+            "accessInfo": {
+                "country": "US",
+                "viewability": "PARTIAL",
+                "embeddable": true,
+                "publicDomain": false,
+                "textToSpeechPermission": "ALLOWED",
+                "epub": {
+                    "isAvailable": true,
+                    "acsTokenLink": "http://books.google.com/books/download/The_Ivory_Tower_and_Harry_Potter-sample-epub.acsm?id=iO5pApw2JycC&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+                },
+                "pdf": {
+                    "isAvailable": false
+                },
+                "webReaderLink": "http://books.google.com/books/reader?id=iO5pApw2JycC&hl=&printsec=frontcover&output=reader&source=gbs_api",
+                "accessViewStatus": "SAMPLE",
+                "quoteSharingAllowed": false
+            },
+            "searchInfo": {
+                "textSnippet": "In her new epilogue, Lana A. Whited brings this volume up to date by covering Rowling&#39;s latest book, Harry Potter and the Order of the Phoenix."
+            }
+        }
+    ]
+});

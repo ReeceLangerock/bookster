@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <title>Bookster</title>
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+</head>
+<html>
+
+
+<body>
+    <div class='container'>
+        <!--import navbar -->
+        <% if (authenticatedUser) { %>
+        <%- include ./partials/authNavigation.ejs %>
+        <%  } else { %>
+        <%- include ./partials/navigation.ejs %>
+        <%  } %>
+        <main>
+
+          <div class = "formContainer">
+            <form method = "POST" action = '/user/settings'>
+            First name:<br>
+            <input type="text" name="firstName" value="<%=userData.firstName %>"><br>
+            Last name:<br>
+            <input type="text" name="lastLame" value="<%=userData.lastName %>"><br>
+            City:<br>
+            <input type="text" name="city" value="<%=userData.City %>"><br>
+            State:<br>
+            <input type="text" name="state" value="<%=userData.State %>"><br>
+            <input type="submit" value="Save Changes">
+
+          </form>
+            <div>
+
+        </main>
+    </div>
+</body>
+<!--import footer -->
+<%- include ./partials/footer.ejs %>
+
+</html>
