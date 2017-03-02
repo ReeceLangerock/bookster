@@ -63,7 +63,7 @@ passport.serializeUser(function(user, callback) {
         query,
         function(err, doc) {
             if (doc) {
-                console.log('found')
+                user['mongoID'] = doc['_id'];
             } else {
                 userModel.schema.methods.newUser(dataToSave);
             }

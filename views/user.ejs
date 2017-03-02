@@ -23,13 +23,20 @@
         <main>
 
           <div class = "bookContainer">
-            <% for(var i = 0; i < 10; i++){ %>
+            <form method = "POST" action = '/user'>
+            <div class = 'bookItem'>
+            <input type = "text" name = "bookTitle" value = "Book Title">
+              <input type = "submit">
+            </form>
 
+            </div>
+            <% if(bookData) { %>
+            <% for(var i = 0; i < bookData.length; i++){ %>
+              <p><%=bookData[i].volumeInfo.title %></p>
+        <%    } %>
         <%    } %>
 
-        <form method = "POST" action = '/user'>
-          <input type = "submit">
-        </form>
+
 
             <div>
 

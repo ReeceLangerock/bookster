@@ -6,6 +6,7 @@ var user2 = require('../models/userModel');
 router.get('/', function(req, res) {
 
     if (req.isAuthenticated()) {
+        console.log(req.user['mongoID']);
         res.render('index', {
             authenticatedUser: true,
         });
