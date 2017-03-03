@@ -23,9 +23,23 @@
         <main>
 
           <div class = "bookContainer">
-            <% for(var i = 0; i < 10; i++){ %>
+            <% if(books) { %>
+              <% for(var i = 0; i < books.length; i++){ %>
+                <div class = "bookItem">
+                  <h1><%=books[i].title %></h1>
+                  <img src = "<%=books[i].bookImageURL %>">
+                  <p>by: <%=books[i].author %></p>
+                  <% if(userID != false) { %>
+                  <% if(books[i].ownedBy.includes(userID)){%>
+                    <button>Trade</button>
+                    <% } %>
+                  <% } %>
+        
+                </div>
 
-        <%    } %>
+
+                  <% } %>
+                    <% } %>
 
             <div>
 

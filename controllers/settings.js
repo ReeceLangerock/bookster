@@ -12,7 +12,7 @@ router.use(bodyParser.json());
 router.get('/', function(req, res) {
 
     if (req.isAuthenticated()) {
-        getUserData(req.user).then(function(response, error) {
+        getUserData(req.user.mongoID).then(function(response, error) {
             res.render('user-settings', {
                 authenticatedUser: true,
                 userData: response
@@ -29,39 +29,19 @@ router.get('/', function(req, res) {
 
 router.post('/', function(req, res){
   console.log(req.body);
-  updateUserDate(req.user, req.body).then(function(req,res){
+  updateUserDate(req.user.mongoID, req.body).then(function(req,res){
     res.send('saved');
     res.end();
   })
 })
 
-function getQueryFromReqUser(user){
-  var providerQuery = '';
-  switch (user.provider) {
-      case 'facebook':
-          providerQuery = 'fbID';
-          break;
-      case 'google-oauth2':
-          providerQuery = 'googleID';
-          break;
-      case 'auth0':
-          providerQuery = 'auth0ID';
-          break;
-  }
-  var name = providerQuery;
-  var value = user.identities[0].user_id;
-  var query = {};
-  query[name] = value;
 
-  return query;
-}
 
 function updateUserDate(user, data){
 
   return new Promise(function(resolve, reject) {
-    query = getQueryFromReqUser(user);
-    userModel.findOneAndUpdate(
-        query, {$set:   {firstName: data.firstName,
+    userModel.findOneAndUpdate({ _id: user},
+         {$set:   {firstName: data.firstName,
         lastName: data.lastName,
         City: data.city,
         State: data.state}},
@@ -82,9 +62,8 @@ function updateUserDate(user, data){
 
 function getUserData(user) {
     return new Promise(function(resolve, reject) {
-        query = getQueryFromReqUser(user);
         userModel.findOne(
-            query,
+            { _id: user},
             function(err, doc) {
                 if (err) {
                     throw err;

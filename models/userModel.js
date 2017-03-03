@@ -26,9 +26,9 @@ var userSchema = mongoose.Schema({
 
 });
 
-userSchema.methods.newUser = function(data){
+userSchema.methods.newUser = function(id, data){
   var newUser = new userModel({
-    '_id': new ObjectID(),
+    '_id': id,
     'firstName': data.firstName,
     'lastName': data.lastName,
     'fbID': data.fbID,
@@ -60,6 +60,8 @@ userSchema.methods.newUser = function(data){
     }
   })
 }
+
+
 
 var userModel = mongoose.model('user', userSchema, 'users');
 module.exports = userModel;

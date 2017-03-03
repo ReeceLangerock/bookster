@@ -22,7 +22,9 @@
         <%  } %>
         <main>
 
-          <div class = "bookContainer">
+          <div class = "userPageContainer">
+
+            <div class = 'addBookContainer'>
             <form method = "POST" action = '/user'>
             <div class = 'bookItem'>
             <input type = "text" name = "bookTitle" value = "Book Title">
@@ -32,16 +34,44 @@
             </div>
             <% if(bookData) { %>
             <% for(var i = 0; i < bookData.length; i++){ %>
-              <p><%=bookData[i].volumeInfo.title %></p>
+            <% var imgURL = "null" %>
+            <% if(typeof bookData[i].volumeInfo.imageLinks != "undefined") {%>
+            <% imgURL = bookData[i].volumeInfo.imageLinks.smallThumbnail %>
+            <% } %>
+              <div class = "bookItem">
+
+                <form method = "POST" action = '/user/add-book'>
+                <p><%=bookData[i].volumeInfo.title %></p>
+                <img src = "<%=imgURL %>">
+
+                  <input type= "hidden" name="bookTitle" value="<%=bookData[i].volumeInfo.title %>">
+                  <input type= "hidden" name="bookAuthor" value="<%=bookData[i].volumeInfo.authors %>">
+                  <input type= "hidden" name="bookImageUrl" value="<%=imgURL %>">
+                  <input type= "hidden" name="bookID" value="<%=bookData[i].id %>">
+                  <input type = "submit" value = "add book">
+              </form>
+            </div>
         <%    } %>
         <%    } %>
+      </div>
+
+      <div class = 'userBookContainer'>
+      <% if(userBooks) { %>
+        <% for(var i = 0; i < userBooks.length; i++){ %>
+          <div class = "bookItem">
+            <h1><%=userBooks[i].title %></h1>
+            <img src = "<%=userBooks[i].bookImageURL %>">
+            <p>by: <%=userBooks[i].author %></p>
+          </div>
 
 
+            <% } %>
+              <% } %>
+            </div>
 
-            <div>
-
+            </div>
         </main>
-    </div>
+
 </body>
 <!--import footer -->
 <%- include ./partials/footer.ejs %>

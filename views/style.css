@@ -70,6 +70,50 @@ main {
     color: #ffffff;
 }
 
+/* BOOK DISPLAY */
+
+.bookContainer{
+  width: 90%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.userPageContainer{
+  width: 90%;
+  margin: auto;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.bookItem{
+  padding: 5px;
+  flex: 1 0 100px;
+  border: 1px solid;
+  margin: 5px;
+}
+
+.bookItem img {
+  width: 100px;
+}
+
+.userBookContainer{
+  display: flex;
+  background-color: blue;
+  flex-wrap: wrap;
+}
+
+.addBookContainer{
+  background-color: red;
+  display: flex;
+  width:200px;
+}
+
+
+
+
+
+
 /*FOOTER STYLING */
 footer {
     height: 60px;
