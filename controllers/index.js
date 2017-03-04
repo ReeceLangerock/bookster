@@ -54,10 +54,11 @@ router.post('/send-request', function(req, res) {
     var sendRequestToOtherUserProm = sendRequestToOtherUser(req.user.mongoID, bookToSendID, bookToReceiveID, bookOwnerID);
     Promise.all([addRequestToSelfProm, sendRequestToOtherUserProm]).then(function(responses, error) {
         if (responses[0] == "FAILED" || responses[1] == "FAILED") {
+
             res.send("failure")
         } else {
-            res.send("Request Send");
-            res.end();
+          req.flash('success', 'This is a flash message using the express-flash module.');
+          res.redirect('back');
         }
     })
 
@@ -133,8 +134,7 @@ function getUserBooks(userID) {
         }, function(err, doc) {
             if (err) {
                 reject(err);
-            } else {
-                console.log(doc);
+            } else {                
                 resolve(doc);
             }
         });

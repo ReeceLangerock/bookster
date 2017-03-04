@@ -6,7 +6,9 @@ var port = process.env.PORT || 3000;
 var app = express();
 var config = require('./config');
 var passport = require('passport');
+var flash = require("connect-flash");
 var session = require('express-session');
+
 
 mongoose.connect('mongodb://'+config.getMongoUser()+':'+config.getMongoPass()+'@ds111940.mlab.com:11940/bookster');
 //below mongoose.connect saved for when moving to heroku
@@ -22,16 +24,18 @@ app.set('views', path.join(__dirname, '/views'));
 app.use(express.static(path.join(__dirname, 'views')));
 app.set('view engine', 'ejs');
 
+
 //passport setup
 app.use(session(config.getPassportSecret()));
 app.use(passport.initialize());
 app.use(passport.session());
 
-/*app.use(function(req, res, next) {
-  res.locals.currentUser = req.user;
-  next();
-});*/
-
+app.use(flash());
+app.use(function(req, res, next){
+   res.locals.error = req.flash("error");
+   res.locals.success = req.flash("success");
+   next();
+});
 //ROUTES
 app.use('/', require('./controllers/index'));
 app.use('/user/settings', require('./controllers/settings'));

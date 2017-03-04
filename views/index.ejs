@@ -22,6 +22,17 @@
         <%  } %>
         <main>
 
+          <% if(error){ %>
+        <div>
+          <p><%= error %></p>
+        </div>
+        <% } %>
+        <% if(success){ %>
+          <div>
+            <p><%= success %></p>
+          </div>
+        <% } %>
+
           <div class = "bookContainer">
             <% if(books) { %>
               <% for(var i = 0; i < books.length; i++){ %>
