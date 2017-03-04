@@ -22,13 +22,15 @@
         <%  } %>
         <main>
           <div>
+            <% if(userData) { %>
             <div>
             <h1>Your Trade Requests <%=userData.requestsSent.length %></h1>
           </div>
-          <h1>Your Pending Requests <%=userData.requestsPending.length %></h1>
+
           <div>
-          pending requests
+            <h1>Your Pending Requests <%=userData.requestsPending.length %></h1>
         </div>
+        <% } %>
           </div>
           <div class = "userPageContainer">
 
@@ -79,20 +81,7 @@
             </div>
 
             </div>
-              <div id="myModal" class="modal">
-
-              <!-- Modal content -->
-              <div class="modal-content">
-                  <form action="/add-pin" method="post">
-                      <span class="close">&times;</span>
-                      <input class='modal-input' type="text" placeholder="image url" name="image_url" required><br>
-                      <input class='modal-input' type="text" placeholder="image title" name="image_title" required><br>
-                      <input class='modal-input' type="text" placeholder="image description" name="image_description"><br><br>
-                      <input type="submit" value="Submit">
-                  </form>
-
-              </div>
-              </div>
+            
 
         </main>
 

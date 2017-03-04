@@ -4,11 +4,15 @@ var modal, btn, span;
 
 $(document).ready(function() {
   modal = document.getElementById('myModal');
-  modalBookIdValue = document.getElementById('modalBookId');
+  modalBookReceiveIdValue = document.getElementById('modalBookReceiveId');
+    modalBookOwnerIdValue = document.getElementById('modalBookOwnerID');
+
 
   // Get the button that opens the modal
   buttons = document.querySelectorAll(".requestButton");
   buttons.forEach(button => button.addEventListener('click', display));
+
+
 
 
   // Get the <span> element that closes the modal
@@ -17,7 +21,8 @@ $(document).ready(function() {
   // When the user clicks the button, open the modal
   function display() {
       modal.style.display = "block";
-      modalBookIdValue.value = this.dataset.bookid;
+      modalBookReceiveIdValue.value = this.dataset.bookid;
+      modalBookOwnerIdValue.value = this.dataset.bookownerid;
   }
 
   // When the user clicks on <span> (x), close the modal

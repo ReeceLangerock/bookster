@@ -14,23 +14,26 @@ router.use(bodyParser.json());
 
 router.get('/', function(req, res) {
     if (req.isAuthenticated()) {
-      var userData;
-        getUser(req.user.mongoID).then(function(response, error) {
-          userData = response;
-        }).then(
-        getUsersBooks(req.user.mongoID).then(function(response, error) {
+      var userDataProm = getUser(req.user.mongoID);
+      var userBooksProm = getUsersBooks(req.user.mongoID);
+
+      Promise.all([userDataProm, userBooksProm]).then(function(responses, error) {
+
+        var userData = responses[0];
+        var userBooks = responses[1];
             res.render('user', {
                 authenticatedUser: true,
                 bookData: false,
-                userBooks: response,
+                userBooks: userBooks,
                 userData: userData
             });
-        }));
+        });
     } else {
         res.render('user', {
             authenticatedUser: false,
             bookData: false,
-            userBooks: false
+            userBooks: false,
+            userData: userData
         });
 
 
@@ -38,13 +41,14 @@ router.get('/', function(req, res) {
     }
 });
 
-router.post('/', function(req, res) {
+router.post('/', function(req, res) { // refactor this to res.json
     searchForBook(req.body.bookTitle).then(function(response, error) {
 
         res.render('user', {
             authenticatedUser: true,
             bookData: response,
-            userBooks: false
+            userBooks: false,
+            userData: false
         });
 
     })
@@ -114,7 +118,7 @@ function getUsersBooks(userID) {
                             bookModel.findOneAndUpdate({
                                 isbn13: bookToAdd.bookID
                             }, {
-                                $push: {
+                                $set: {
                                     ownedBy: userID
                                 }
                             }, function(err) {

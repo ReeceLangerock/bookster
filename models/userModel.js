@@ -15,14 +15,14 @@ var userSchema = mongoose.Schema({
       'requestID': String,
       'bookToSend': String,
       'bookToReceive': String,
-      'bookOwner': String,
+      'bookOwnerID': String,
       '_id' : false
     }],
     'requestsPending': [{
       'requestID': String,
       'bookToSend': String,
       'bookToReceive': String,
-      'bookOwner': String,
+      'bookOwnerID': String,
       '_id' : false
     }]
 

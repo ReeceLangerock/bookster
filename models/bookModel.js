@@ -7,7 +7,7 @@ var bookSchema = mongoose.Schema({
     'author': String,
     'bookImageURL': String,
     'isbn13': String,
-    'ownedBy': [String]
+    'ownedBy': String
 
 });
 
@@ -18,7 +18,7 @@ bookSchema.methods.newBook = function(id, data, userId){
     'author': data.bookAuthor,
     'bookImageURL': data.bookImageUrl,
     'isbn13': data.bookID,
-    'ownedBy': [userId]
+    'ownedBy': userId
   });
 
   newBook.save(function(err){
