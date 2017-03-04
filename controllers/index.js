@@ -3,6 +3,11 @@ var router = express.Router();
 var mongoose = require('mongoose');
 var user = require('../models/userModel');
 var bookModel = require('../models/bookModel');
+var bodyParser = require('body-parser');
+router.use(bodyParser.urlencoded({
+    extended: true
+}));
+router.use(bodyParser.json());
 
 router.get('/', function(req, res) {
     getAllBooks().then(function(response, error) {
@@ -24,6 +29,10 @@ router.get('/', function(req, res) {
             }
 
     });
+});
+
+router.post('/send-request', function(req, res){
+  console.log(req.body);
 });
 
 

@@ -30,11 +30,11 @@
                   <img src = "<%=books[i].bookImageURL %>">
                   <p>by: <%=books[i].author %></p>
                   <% if(userID != false) { %>
-                  <% if(books[i].ownedBy.includes(userID)){%>
-                    <button>Trade</button>
+                  <% if(!books[i].ownedBy.includes(userID)){%>
+                    <button data-bookID ="<%=books[i]['_id'] %>" class = "requestButton">Request</button>
                     <% } %>
                   <% } %>
-        
+
                 </div>
 
 
@@ -43,10 +43,34 @@
 
             <div>
 
+              <!-- The Modal -->
+              <div id="myModal" class="modal">
+
+                <!-- Modal content -->
+                <div class="modal-content">
+                  <form action = "/send-request" method = "post">
+                  <span class="close">&times;</span>
+                  <input id = "modalBookId" type = "hidden" name = "bookID" value = "">
+                  <select name="books">
+                    <% if(books) { %>
+                      <% for(var i = 0; i < books.length; i++){ %>
+                    <option value="<%=books[i].title %>"><%=books[i].title %></option>
+                   <% } %>
+                  </select>
+                  <input type = "submit" value = "Submit">
+
+
+                    <% } %>
+                </form>
+
+                </div>
+              </div>
+
         </main>
     </div>
 </body>
 <!--import footer -->
 <%- include ./partials/footer.ejs %>
+<script class = 'modal-input' type="text/javascript" src="./javascript/modal.js"></script>
 
 </html>

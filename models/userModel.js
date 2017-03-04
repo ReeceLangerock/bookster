@@ -15,13 +15,15 @@ var userSchema = mongoose.Schema({
       'requestID': String,
       'bookToSend': String,
       'bookToReceive': String,
-      'bookOwner': String
+      'bookOwner': String,
+      '_id' : false
     }],
     'requestsPending': [{
       'requestID': String,
       'bookToSend': String,
       'bookToReceive': String,
-      'bookOwner': String
+      'bookOwner': String,
+      '_id' : false
     }]
 
 });
@@ -37,18 +39,8 @@ userSchema.methods.newUser = function(id, data){
     'City': '',
     'State': '',
     'books': [],
-    'requestsSent': [{
-      'requestID': '',
-      'bookToSend': '',
-      'bookToReceive':'',
-      'bookOwner': '',
-    }],
-    'requestsPending': [{
-      'requestID': '',
-      'bookToSend': '',
-      'bookToReceive': '',
-      'bookOwner': '',
-    }]
+    'requestsSent': [],
+    'requestsPending': []
   });
 
   newUser.save(function(err){

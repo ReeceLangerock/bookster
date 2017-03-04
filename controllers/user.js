@@ -14,14 +14,18 @@ router.use(bodyParser.json());
 
 router.get('/', function(req, res) {
     if (req.isAuthenticated()) {
+      var userData;
+        getUser(req.user.mongoID).then(function(response, error) {
+          userData = response;
+        }).then(
         getUsersBooks(req.user.mongoID).then(function(response, error) {
-            console.log(response);
             res.render('user', {
                 authenticatedUser: true,
                 bookData: false,
-                userBooks: response
+                userBooks: response,
+                userData: userData
             });
-        })
+        }));
     } else {
         res.render('user', {
             authenticatedUser: false,
@@ -58,6 +62,18 @@ router.post('/add-book', function(req, res) {
     })
 })
 
+router.post('/delete-book', function(req, res) {
+    deleteBook(req.body, req.user.mongoID).then(function(response, error) {
+        if (response == 'ALREADY_OWNED') {
+
+        } else if (response == 'BOOK_CREATED') {
+
+        } else if (response == 'BOOK_ADDED') {
+
+        }
+    })
+})
+
 function getUsersBooks(userID) {
     return new Promise(function(resolve, reject) {
             bookModel.find({ownedBy: [userID]}, function(err, doc) {
@@ -70,6 +86,20 @@ function getUsersBooks(userID) {
 
             });
     }
+
+    function getUser(userID){
+      return new Promise(function(resolve, reject) {
+              userModel.findOne({_id: userID}, function(err, doc) {
+                      if (err) {
+                          reject(err);
+                      } else {
+                          resolve(doc);
+                      }
+                  });
+
+              });
+    }
+
 
     function addBook(bookToAdd, userID) {
         return new Promise(function(resolve, reject) {
