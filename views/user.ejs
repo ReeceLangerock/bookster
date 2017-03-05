@@ -24,11 +24,11 @@
           <div>
             <% if(userData) { %>
             <div>
-            <h1>Your Trade Requests <%=userData.requestsSent.length %></h1>
+            <h1>Your Trade Requests <button><a href = '/trades'><%=userData.requestsSent.length %></a></button></h1>
           </div>
 
           <div>
-            <h1>Your Pending Requests <%=userData.requestsPending.length %></h1>
+            <h1>Your Pending Requests <button><a href = '/trades'><%=userData.requestsPending.length %></a></button></h1>
         </div>
         <% } %>
           </div>
@@ -81,12 +81,12 @@
             </div>
 
             </div>
-            
 
         </main>
 
 </body>
 <!--import footer -->
 <%- include ./partials/footer.ejs %>
+
 
 </html>

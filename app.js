@@ -40,6 +40,7 @@ app.use(function(req, res, next){
 app.use('/', require('./controllers/index'));
 app.use('/user/settings', require('./controllers/settings'));
 app.use('/user', require('./controllers/user'));
+app.use('/trades', require('./controllers/trades'));
 app.use('/auth', require('./controllers/signin'));
 app.use('/logout', require('./controllers/logout'));
 app.use(function (req, res, next) {

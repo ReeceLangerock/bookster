@@ -50,7 +50,7 @@ main {
   z-index: 1;
 
 }
-.logo img{
+.logo {
   max-height: 40px;
 }
 
@@ -154,6 +154,36 @@ main {
     color: #000;
     text-decoration: none;
     cursor: pointer;
+}
+
+.tradeContainer{
+  width:90%;
+  margin: auto;
+  display: flex;
+  justify-content: space-around;;
+}
+
+.sentTradesContainer, .pendingTradesContainer{
+  display:flex;
+  flex-direction: column;
+  border: 1px solid;
+  word-wrap: break-word;
+}
+
+.tradeItem{
+display: flex;
+flex-direction: row;
+  align-items: baseline;
+}
+
+.tradeSubItem{
+  word-wrap: break-word;
+  width: 150px;
+}
+
+.tradeItem img{
+  padding: 3px;
+  width: 100px;
 }
 
 

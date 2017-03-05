@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <title>Bookster</title>
+    <link rel="stylesheet" type="text/css" href="./style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+</head>
+<html>
+
+
+<body>
+    <div class='container'>
+        <!--import navbar -->
+        <% if (authenticatedUser) { %>
+        <%- include ./partials/authNavigation.ejs %>
+        <%  } else { %>
+        <%- include ./partials/navigation.ejs %>
+        <%  } %>
+        <main>
+          <div class = "tradeContainer">
+
+            <div class = "pendingTradesContainer">
+              <h1>Trades Offers Received</h1>
+
+              <% for(let i = 0; i < requestPendingBooksOffered.length; i++) { %>
+                <div class = 'tradeItem'>
+                  <div class = 'tradeSubItem'>
+                <h5>Offer: <%=requestPendingBooksOffered[i].title %></h5>
+                <img src = "<%=requestPendingBooksOffered[i].bookImageURL %>">
+
+                </div>
+
+                <div class = 'tradeSubItem'>
+                <h5>Receive: <%=requestPendingBooksReceiving[i].title %></h5>
+                <img src = "<%=requestPendingBooksReceiving[i].bookImageURL %>">
+                <div class = 'tradeSubItem'>
+                <button>ACCEPT</button>
+                <button>DECLINE</button>
+                </div>
+                </div>
+              </div>
+          <%  } %>
+            </div>
+
+            <div class = "sentTradesContainer">
+            <h1>Trades Offers Sent</h1>
+              <% for(let i = 0; i < requestSentBooksOffered.length; i++) { %>
+                <div class = 'tradeItem'>
+                  <div class = 'tradeSubItem'>
+                <h5>Offer: <%=requestSentBooksOffered[i].title %></h5>
+                <img src = "<%=requestSentBooksOffered[i].bookImageURL %>">
+
+                </div>
+
+                <div class = 'tradeSubItem'>
+                <h5>Receive: <%=requestSentBooksReceiving[i].title %></h5>
+                <img src = "<%=requestSentBooksReceiving[i].bookImageURL %>">
+
+                </div>
+                <div class = 'tradeSubItem'>
+                <button>CANCEL</button>
+                </div>
+                </div>
+          <%  } %>
+            </div>
+          </div>
+
+
+        </main>
+
+</body>
+<!--import footer -->
+<%- include ./partials/footer.ejs %>
+
+
+</html>
