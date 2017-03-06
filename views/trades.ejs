@@ -38,8 +38,20 @@
                 <h5>Receive: <%=requestPendingBooksReceiving[i].title %></h5>
                 <img src = "<%=requestPendingBooksReceiving[i].bookImageURL %>">
                 <div class = 'tradeSubItem'>
-                <button>ACCEPT</button>
-                <button>DECLINE</button>
+                  <form method = 'POST' action = '/trades/accept'>
+                    <input type = 'hidden' name = 'requestToAccept' value = '<%=requestPendingArray[i].requestID %>'>
+                    <input type = 'hidden' name = 'bookToReceive' value = "<%=requestPendingBooksReceiving[i]['_id'] %>">
+                    <input type = 'hidden' name = 'bookToSend' value = "<%=requestPendingBooksOffered[i]['_id'] %>">
+                    <input type = 'hidden' name = 'otherUserID' value = "<%=requestPendingArray[i].bookOwnerID %>">
+                    <input type = 'hidden' name = 'requestID' value = '<%=requestPendingArray[i].requestID %>'>
+                    <input type = "submit" value = 'Accept'>
+
+              </form>
+              <form method = 'POST' action = '/trades/decline'>
+                <input type = 'hidden' name = 'requestToDecline' value = '<%=requestPendingArray[i].requestID %>'>
+                <input type = "submit" value = 'Decline'>
+
+              </form>
                 </div>
                 </div>
               </div>
@@ -62,7 +74,10 @@
 
                 </div>
                 <div class = 'tradeSubItem'>
-                <button>CANCEL</button>
+                  <form method = "POST" action = '/trades/cancel'>
+                    <input type = 'hidden' name = 'requestID' value = '<%=requestSentId[i] %>'>
+                  <input type = 'submit' value = "Cancel">
+                </form>
                 </div>
                 </div>
           <%  } %>
