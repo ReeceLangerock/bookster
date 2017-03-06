@@ -35,11 +35,13 @@
           <div class = "userPageContainer">
 
             <div class = 'addBookContainer'>
-            <form method = "POST" action = '/user'>
-            <div class = 'bookItem'>
-            <input type = "text" name = "bookTitle" value = "Book Title">
-              <input type = "submit">
-            </form>
+
+            <div class = 'resultItem'>
+            <input type = "text" id = "searchInput" name = "bookTitle" value = "Book Title" onFocus="clearInput()">
+            <button onclick="getBooks()">Search</button>
+            <div id = "bookResultContainer">
+            </div>
+
 
             </div>
             <% if(bookData) { %>
@@ -83,10 +85,11 @@
             </div>
 
         </main>
-
+      </div>
 </body>
 <!--import footer -->
 <%- include ./partials/footer.ejs %>
+<script class = 'modal-input' type="text/javascript" src="./javascript/booksearch.js"></script>
 
 
 </html>

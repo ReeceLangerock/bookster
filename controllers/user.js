@@ -44,12 +44,14 @@ router.get('/', function(req, res) {
 router.post('/', function(req, res) { // refactor this to res.json
     searchForBook(req.body.bookTitle).then(function(response, error) {
 
-        res.render('user', {
+        res.json(response);
+        res.end();
+        /*res.render('user', {
             authenticatedUser: true,
             bookData: response,
             userBooks: false,
             userData: false
-        });
+        });*/
 
     })
 })

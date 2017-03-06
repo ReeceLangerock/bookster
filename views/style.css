@@ -6,7 +6,7 @@ https://color.adobe.com/Times-Changing-color-theme-1536595/?showPublished=true*/
 
 /*MAIN PAGE STYLING */
 body, html {
-    background-color: #ffffff;
+    background-color: #f1f2eb;
     height: 100%;
 }
 
@@ -26,17 +26,17 @@ main {
     min-height: 50px;
     align-items: center;
     display: flex;
-    background-color: #6dbcdb;
+    background-color: #393e41;
     justify-content: flex-end;
     list-style: none;
     flex-wrap: wrap;
     margin:0px;
     padding: 0px;
-    border-bottom: 1px solid #2c3e50;
+    border-bottom: 1px solid black;
 }
 
 .menu a {
-    color: #2c3e50;
+    color: #393e41;
     margin:0px;
     display:block;
     text-decoration: none;
@@ -48,26 +48,30 @@ main {
 .logo {
   flex:10 0;
   z-index: 1;
-
+  color: white;
+  fill: #ffffff;
 }
-.logo {
+
+.logo img{
+  color: white;
+  fill: #ffffff;
   max-height: 40px;
 }
 
 .navItem {
-    flex:1 0 82px;
-    max-width: 82px;
+    flex:1 0 95px;
+    max-width: 95px;
     margin: 2px 10px 2px 0px;
     border-radius: 5px;
     text-align: center;
     background-color: #ffffff;
-    border: 2px solid #2c3e50;
+    border: 2px solid #889696;
     font-size: 20px;
 }
 
 .navItem a:hover {
-    background-color: #2c3e50;
-    color: #ffffff;
+    background-color: #889696;
+    color: #f1f2eb;
 }
 
 /* BOOK DISPLAY */
@@ -88,25 +92,66 @@ main {
 
 .bookItem{
   padding: 5px;
-  flex: 1 0 100px;
-  border: 1px solid;
+  flex: 1 100px;
+  max-width: 250px;
+  color: #393E41;
+  border: 2px solid #393e41;
+  border-radius: 2px;
   margin: 5px;
+  word-wrap: break-word;
 }
 
 .bookItem img {
-  width: 100px;
+  display: block;
+  width: 150px;
+  margin: auto;
+  background-color: #393e41;
+  padding: 2px;
+}
+
+.resultItem{
+  padding: 5px;
+  flex: 1 100px;
+  max-width: 350px;
+  color: #393E41;
+  border: 2px solid #393e41;
+  border-radius: 2px;
+  margin: 5px;
+  word-wrap: break-word;
+}
+
+.addButton{
+  border-radius: 100%;
+
+  background-color: #5887FF;
 }
 
 .userBookContainer{
   display: flex;
-  background-color: blue;
+  margin: 5px;
   flex-wrap: wrap;
 }
 
 .addBookContainer{
-  background-color: red;
+  margin: 5px;
   display: flex;
-  width:200px;
+  width: 350px;
+
+}
+
+.resultSpan{
+  align-items: center;
+  display: flex;
+  justify-content:space-between;;
+  flex: 1 0;
+}
+
+.resultSpan img{
+  overflow: hidden;
+  height: 100px;
+  margin: 2px;
+  padding: 2px;
+  max-width: 75px;
 }
 
 
@@ -160,7 +205,7 @@ main {
   width:90%;
   margin: auto;
   display: flex;
-  justify-content: space-around;;
+  justify-content: space-around;
 }
 
 .sentTradesContainer, .pendingTradesContainer{
@@ -196,10 +241,10 @@ footer {
     bottom: 0;
     left: 0;
     width: 100%;
-    color: #2c3e50;
-    background-color: #6dbcdb;
+    color: #f1f2eb;
+    background-color: #393e41;
     font-size: 14px;
-    border-top: 1px solid #2c3e50;
+    border-top: 1px solid black;
     overflow: hidden
 }
 
@@ -211,6 +256,6 @@ footer p {
 footer a {
     padding: 0px;
     text-decoration: none;
-    color: #fc4340;
+    color: #dd4b1a;
     margin: 0px;
 }
