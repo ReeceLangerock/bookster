@@ -392,6 +392,11 @@ flex-direction: row;
   border: 5px solid #DD4B1A;
 }
 
+.searchSpan{
+  display: flex;
+  justify-content: center;
+}
+
 /*FOOTER STYLING */
 footer {
     height: 60px;
@@ -421,8 +426,21 @@ footer a {
 }
 
 /*RESPONSIVENESS */
+@media screen and (max-width:720px) {
 
-@media screen and (max-width:420px) {
+.tradeContainer {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+    flex-wrap: wrap;
+    width: 100vw;
+    overflow: hidden;
+}
+
+}
+
+
+@media screen and (max-width:520px) {
     .bookContainer, .userPageContainer, .requestContainer, .addBookContainer, .userBookContainer {
         justify-content: center;
         width: 100vw;
@@ -436,13 +454,7 @@ footer a {
         justify-content: center;
         max-width: 90vw;
     }
-    .tradeContainer {
-      margin-left: auto;
-      margin-right: auto;
-      margin-top: 10px;
-        flex-wrap: wrap;
-        width: 100vw;
-    }
+
     .pendingTradesContainer, .sentTradesContainer {
         margin: 0px 0px 6px 0px;
         width: 100vw;
