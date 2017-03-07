@@ -59,26 +59,18 @@ router.post('/', function(req, res) { // refactor this to res.json
 router.post('/add-book', function(req, res) {
     addBook(req.body, req.user.mongoID).then(function(response, error) {
         if (response == 'ALREADY_OWNED') {
-
+          req.flash('error', 'Book not added, you already own it!.\nClick anywhere to close.')
+          res.redirect('back');
         } else if (response == 'BOOK_CREATED') {
-
+          req.flash('success', 'Book added to your collection!\nClick anywhere to close.');
+          res.redirect('back');
         } else if (response == 'BOOK_ADDED') {
-
+          req.flash('success', 'Book added to your collection!!\nClick anywhere to close.');
+          res.redirect('back');
         }
     })
 })
 
-router.post('/delete-book', function(req, res) {
-    deleteBook(req.body, req.user.mongoID).then(function(response, error) {
-        if (response == 'ALREADY_OWNED') {
-
-        } else if (response == 'BOOK_CREATED') {
-
-        } else if (response == 'BOOK_ADDED') {
-
-        }
-    })
-})
 
 function getUsersBooks(userID) {
     return new Promise(function(resolve, reject) {

@@ -57,9 +57,11 @@ router.post('/send-request', function(req, res) {
 
     // check if the user has already sent a trade offer for the selected book
     var pendingRequestProm = checkForRequest("requestsPending.bookToReceive", req.user.mongoID, bookToReceiveID);
+    var pendingSendProm = checkForRequest("requestsPending.bookToSend", req.user.mongoID, bookToSendID);
     var sentRequestProm = checkForRequest("requestsSent.bookToReceive", req.user.mongoID, bookToReceiveID);
-    Promise.all([pendingRequestProm, sentRequestProm]).then(function(response, error) {
-        if (response[0] == "GOOD_TO_GO" && response[1] == "GOOD_TO_GO") {
+    var sentSendProm = checkForRequest("requestsSent.bookToReceive", req.user.mongoID, bookToSendID);
+    Promise.all([pendingRequestProm, pendingSendProm, sentRequestProm, sentSendProm]).then(function(responses, error) {
+        if (responses[0] == "GOOD_TO_GO" && responses[1] == "GOOD_TO_GO" && responses[2] == "GOOD_TO_GO" && responses[3] == "GOOD_TO_GO") {
             //if the response wasn't found add a sent to request to current user and pending request to other user
             var requestID = new ObjectID();
             var addRequestToSelfProm = addRequestToSelf(req.user.mongoID, bookToSendID, bookToReceiveID, bookOwnerID, requestID);
@@ -68,16 +70,25 @@ router.post('/send-request', function(req, res) {
             Promise.all([addRequestToSelfProm, sendRequestToOtherUserProm]).then(function(responses, error) {
                 //if either update failed, send errr
                 if (responses[0] == "FAILED" || responses[1] == "FAILED") {
-                    req.flash('error', 'Request failed')
+                    req.flash('error', 'Request failed to send.\nClick anywhere to close.')
                     res.redirect('back');
                 } else { // otherwise send successful send
-                    req.flash('success', 'Request Sent.');
+                    req.flash('success', 'Request Sent!\nClick anywhere to close.');
                     res.redirect('back');
                 }
             })
             // if the request was found(already been sent) let user know
         } else {
-            req.flash('error', 'Request already sent')
+
+            var bookError = [];
+            for(let i =0; i < responses.length; i++){
+              console.log(responses);
+              if (responses[i][0] == "ALREADY_REQUESTED"){
+                bookError.push(responses[i][1].title);
+              }
+            }
+            bookError.join(', ');
+            req.flash('error', `A request for the selected book is already pending.\nClick anywhere to close.`)
             res.redirect('back');
         }
     });

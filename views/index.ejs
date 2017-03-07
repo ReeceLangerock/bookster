@@ -9,8 +9,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 
 </head>
-<html>
-
 
 <body>
     <div class='container'>
@@ -22,18 +20,11 @@
         <%  } %>
         <main>
 
-          <% if(error){ %>
-        <div>
-          <p><%= error %></p>
-        </div>
-        <% } %>
-        <% if(success){ %>
-          <div>
-            <p><%= success %></p>
-          </div>
-        <% } %>
 
+
+        <h1 class = "mainTitle">All Books</h1>
           <div class = "bookContainer">
+
             <% if(books) { %>
               <% for(var i = 0; i < books.length; i++){ %>
                 <div class = "bookItem">
@@ -42,7 +33,7 @@
                   <p>by: <%=books[i].author %></p>
                   <% if(userID != false) { %>
                   <% if(!books[i].ownedBy.includes(userID)){%>
-                    <button data-bookOwnerID = "<%=books[i].ownedBy %>" data-bookID ="<%=books[i]['_id'] %>" class = "requestButton">Request</button>
+                    <button data-bookOwnerID = "<%=books[i].ownedBy %>" data-bookID ="<%=books[i]['_id'] %>" class = "requestButton">Request Trade</button>
                     <% } %>
                   <% } %>
 
@@ -51,8 +42,14 @@
 
                   <% } %>
                     <% } %>
+                  </main>
+                </div>
+              </div>
 
-            <div>
+          </body>
+          <!--import footer -->
+          <%- include ./partials/footer.ejs %>  
+
 
               <!-- The Modal -->
               <div id="myModal" class="modal">
@@ -73,18 +70,43 @@
                   </select>
                   <input type = "submit" value = "Submit">
 
-
                     <% } %>
                 </form>
 
                 </div>
               </div>
+              <!-- for Req.flash -->
+              <% if(error && error.length > 0){ %>
+                <div class = "flashPage" id = "flashPageID">
+            <div class = "ui error">
+              <p><%= error %></p>
+            </div>
+          </div>
+            <% } %>
+            <% if(success && success.length > 0){ %>
+              <div class = "flashPage" id = "flashPageID">
+              <div class = "ui success">
+                <h1>success!</h1>
+                <p><%= success[0] %></p><br>
+                <p><%= success[1] %></p>
+              </div>
+            </div>
+            <% } %>
 
         </main>
+      </div>
     </div>
+
 </body>
 <!--import footer -->
 <%- include ./partials/footer.ejs %>
+<script>
+    document.onclick = function(event) {
+        if (document.getElementById('flashPageID')) {
+            document.getElementById('flashPageID').style.display = "none";
+        }
+    }
+</script>
 <script class = 'modal-input' type="text/javascript" src="./javascript/modal.js"></script>
 
 </html>

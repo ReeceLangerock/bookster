@@ -28,10 +28,17 @@ router.get('/', function(req, res) {
 });
 
 router.post('/', function(req, res){
-  console.log(req.body);
-  updateUserDate(req.user.mongoID, req.body).then(function(req,res){
-    res.send('saved');
-    res.end();
+  updateUserDate(req.user.mongoID, req.body).then(function(response,error){
+    if(response == "SETTINGS_UPDATED" ){
+      req.flash('success', 'Your settings have been updated.\nClick anywhere to close.')
+      res.redirect('back');
+    }
+      else{
+        req.flash('error', "Something went wrong. Your setting weren't updated.\nClick anywhere to close.")
+        res.redirect('back');
+      }
+
+
   })
 })
 
@@ -50,7 +57,7 @@ function updateUserDate(user, data){
                 throw err;
             }
             if (doc) {
-                resolve(doc);
+                resolve("SETTINGS_UPDATED");
             } else {
                 reject("NOT_FOUND");
             }

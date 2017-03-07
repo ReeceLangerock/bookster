@@ -21,17 +21,16 @@
         <%- include ./partials/navigation.ejs %>
         <%  } %>
         <main>
-          <div>
+          <div class = "requestContainer">
+            <h1>My Books</h1>
             <% if(userData) { %>
-            <div>
-            <h1>Your Trade Requests <button><a href = '/trades'><%=userData.requestsSent.length %></a></button></h1>
-          </div>
-
-          <div>
-            <h1>Your Pending Requests <button><a href = '/trades'><%=userData.requestsPending.length %></a></button></h1>
+            <div class = "requestItem">
+            <p>My Trade Requests <a href = '/trades'><button><%=userData.requestsSent.length %></button></a></p>
+            <p>Pending Requests <a href = '/trades'><button><%=userData.requestsPending.length %></button></a></p>
         </div>
         <% } %>
           </div>
+
           <div class = "userPageContainer">
 
             <div class = 'addBookContainer'>
@@ -84,11 +83,35 @@
 
             </div>
 
+            <!-- for Req.flash -->
+            <% if(error && error.length > 0){ %>
+              <div class = "flashPage" id = "flashPageID">
+          <div class = "ui">
+            <p><%= error %></p>
+          </div>
+        </div>
+          <% } %>
+          <% if(success && success.length > 0){ %>
+            <div class = "flashPage" id = "flashPageID">
+            <div class = "ui">
+              <p><%= success[0] %></p><br>
+              <p><%= success[1] %></p>
+            </div>
+          </div>
+          <% } %>
+
         </main>
       </div>
 </body>
 <!--import footer -->
 <%- include ./partials/footer.ejs %>
+<script>
+    document.onclick = function(event) {
+        if (document.getElementById('flashPageID')) {
+            document.getElementById('flashPageID').style.display = "none";
+        }
+    }
+</script>
 <script class = 'modal-input' type="text/javascript" src="./javascript/booksearch.js"></script>
 
 

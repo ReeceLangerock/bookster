@@ -29,43 +29,48 @@ passport.use(new Auth0Strategy({
 ));
 
 passport.serializeUser(function(user, callback) {
-  var providerQuery = '';
-  var dataToSave = {
-      fbID: '',
-      googleID: '',
-      auth0ID: '',
-      firstName : '',
-      lastName : ''
-  };
+    callback(null, user);
 
-  switch (user.provider) {
-      case 'facebook':
-          providerQuery = 'fbID';
-          dataToSave.firstName = user.name.givenName;
-          dataToSave.lastName = user.name.familyName;
-          dataToSave.fbID = user.identities[0].user_id;
-          break;
-      case 'google-oauth2':
-          providerQuery = 'googleID';
-          dataToSave.firstName = user.name.givenName;
-          dataToSave.lastName = user.name.familyName;
-          dataToSave.googleID = user.identities[0].user_id;
-          break;
-      case 'auth0':
-          providerQuery = 'auth0ID';
-          dataToSave.auth0ID = user.identities[0].user_id;
-          break;
-  }
-  var name = providerQuery;
-  var value = user.identities[0].user_id;
-  var query = {};
-  query[name] = value;
+});
+
+passport.deserializeUser(function(user, callback) {
+    var providerQuery = '';
+    var dataToSave = {
+        fbID: '',
+        googleID: '',
+        auth0ID: '',
+        firstName: '',
+        lastName: ''
+    };
+
+    switch (user.provider) {
+        case 'facebook':
+            providerQuery = 'fbID';
+            dataToSave.firstName = user.name.givenName;
+            dataToSave.lastName = user.name.familyName;
+            dataToSave.fbID = user.identities[0].user_id;
+            break;
+        case 'google-oauth2':
+            providerQuery = 'googleID';
+            dataToSave.firstName = user.name.givenName;
+            dataToSave.lastName = user.name.familyName;
+            dataToSave.googleID = user.identities[0].user_id;
+            break;
+        case 'auth0':
+            providerQuery = 'auth0ID';
+            dataToSave.auth0ID = user.identities[0].user_id;
+            break;
+    }
+    var name = providerQuery;
+    var value = user.identities[0].user_id;
+    var query = {};
+    query[name] = value;
     userModel.findOne(
         query,
         function(err, doc) {
             if (doc) {
-              user.mongoID = doc['_id'];
-              callback(null, user);
+                user.mongoID = doc['_id'];
+                callback(null, user);
             } else {
                 var tempID = new ObjectID();
                 user.mongoID = tempID;
@@ -73,11 +78,6 @@ passport.serializeUser(function(user, callback) {
                 callback(null, user);
             }
         });
-
-});
-
-passport.deserializeUser(function(user, callback) {
-    callback(null, user);
 });
 
 

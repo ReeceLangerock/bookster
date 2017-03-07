@@ -34,7 +34,6 @@ router.get('/', function(req, res) {
             requestPendingArray.push(response.requestsPending[i]);
         }
 
-
         requestSentBooksOfferedProm = getRequestedBooks(requestSentBookToOfferArray);
         requestSentBooksReceivingProm = getRequestedBooks(requestSentBookToReceiveArray);
 
@@ -58,91 +57,104 @@ router.get('/', function(req, res) {
                 res.send('error');
             }
         })
+
+
+    });
+
+    router.post('/cancel', function(req, res) {
+        var removeProm1 = removeRequest('requestsSent.requestID', 'requestsSent', req.body.requestID);
+        var removeProm2 = removeRequest('requestsPending.requestID', 'requestsPending', req.body.requestID);
+        Promise.all([removeProm1, removeProm2]).then(function(responses, error) {
+            if (responses[0] == "REMOVED" && responses[1] == "REMOVED") {
+                req.flash('success', 'Trade Cancelled!!!.\nClick anywhere to close.')
+                res.redirect('back');
+            } else { // otherwise send successful send
+                req.flash('error', 'The trade was not cancelled successfully. Please try again.\nClick anywhere to close.');
+                res.redirect('back');
+            }
+        });
+    });
+
+    router.post('/decline', function(req, res) {
+
     })
 
-});
+    router.post('/accept', function(req, res) {
+        var bookToReceive = req.body.bookToReceive;
+        var bookToSend = req.body.bookToSend;
+        var otherUsersID = req.body.otherUserID;
+        var requestID = req.body.requestID;
+        var acceptProm1 = acceptRequest(req.user.mongoID, bookToSend, bookToReceive);
+        var acceptProm2 = acceptRequest(otherUsersID, bookToReceive, bookToSend);
 
-router.post('/cancel', function(req, res) {
-    removeRequest('requestsSent.requestID', 'requestsSent', req.body.requestID);
-    removeRequest('requestsPending.requestID', 'requestsPending', req.body.requestID);
+        var swapProm1 = swapBookOwnership(bookToSend, otherUsersID);
+        var swapProm2 = swapBookOwnership(bookToReceive, req.user.mongoID);
 
-    res.send('cancel');
-})
+        Promise.all([acceptProm1, acceptProm2, swapProm1, swapProm2]).then(function(response, error) {
+            var removeProm1 = removeRequest('requestsSent.requestID', 'requestsSent', req.body.requestID);
+            var removeProm2 = removeRequest('requestsPending.requestID', 'requestsPending', req.body.requestID);
 
-router.post('/decline', function(req, res) {
-    console.log(req.body);
-})
+            Promise.all([removeProm1, removeProm2]).then(function(responses, error) {
+                if (responses[0] == "REMOVED" && responses[1] == "REMOVED") {
+                    req.flash('success', 'Trade accepted!!!.\nClick anywhere to close.')
+                    res.redirect('back');
+                } else { // otherwise send successful send
+                    req.flash('error', 'The trade was not processed successfully. Please try again.\nClick anywhere to close.');
+                    res.redirect('back');
+                }
+            })
+        })
 
-router.post('/accept', function(req, res) {
-    var bookToReceive = req.body.bookToReceive;
-    var bookToSend = req.body.bookToSend;
-    var otherUsersID = req.body.otherUserID;
-    var requestID = req.body.requestID;
-    var acceptProm1 = acceptRequest(req.user.mongoID, bookToSend, bookToReceive);
-    var acceptProm2 = acceptRequest(otherUsersID, bookToReceive, bookToSend);
-
-    var swapProm1 = swapBookOwnership(bookToSend, otherUsersID);
-    var swapProm2 = swapBookOwnership(bookToReceive, req.user.mongoID);
-
-    Promise.all([acceptProm1,acceptProm2,swapProm1,swapProm2]).then(function(response, error){
-      removeRequest('requestsSent.requestID', 'requestsSent', req.body.requestID);
-      removeRequest('requestsPending.requestID', 'requestsPending', req.body.requestID);
     })
 
 })
 
 function acceptRequest(userID, bookToSend, bookToReceive) {
-  return new Promise(function(resolve, reject) {
-      userModel.findOneAndUpdate({
-              _id: userID
-          }, {
-              $pull: {
-                  books: bookToSend
-              }
-          }, {
-            $push: {
-                books: bookToReceive
-              }
-          },
-          function(err, doc) {
-              if (err) {
-                  console.log(err)
-                  console.log('failed')
-                  reject('FAILED');
-              } else if (doc) {
-                console.log('swapped')
-                  resolve("SWAPPED");
-              } else {
-                console.log('NOT_FOUND')
-                  resolve("NOT_FOUND");
-              }
-          })
-  });
+    return new Promise(function(resolve, reject) {
+        userModel.findOneAndUpdate({
+                _id: userID
+            }, {
+                $pull: {
+                    books: bookToSend
+                }
+            }, {
+                $push: {
+                    books: bookToReceive
+                }
+            },
+            function(err, doc) {
+                if (err) {
+                    console.log(err)
+                    reject('FAILED');
+                } else if (doc) {
+                    resolve("SWAPPED");
+                } else {
+                    resolve("NOT_FOUND");
+                }
+            })
+    });
 }
 
 function swapBookOwnership(bookID, newOwner) {
-  return new Promise(function(resolve, reject) {
-      bookModel.findOneAndUpdate({
-              _id: bookID
-          }, {
-              $set: {
-                  ownedBy: newOwner
-              }
-          },
-          function(err, doc) {
-              if (err) {
-                  console.log(err)
-                  console.log('failed')
-                  reject('FAILED');
-              } else if (doc) {
-                console.log('swapped')
-                  resolve("SWAPPED");
-              } else {
-                console.log('NOT_FOUND')
-                  resolve("NOT_FOUND");
-              }
-          })
-  });
+    return new Promise(function(resolve, reject) {
+        bookModel.findOneAndUpdate({
+                _id: bookID
+            }, {
+                $set: {
+                    ownedBy: newOwner
+                }
+            },
+            function(err, doc) {
+                if (err) {
+                    console.log(err)
+                    reject('FAILED');
+                } else if (doc) {
+                    resolve("SWAPPED");
+                } else {
+                    resolve("NOT_FOUND");
+                }
+            })
+    });
 }
 
 
@@ -184,7 +196,12 @@ function getRequestedBooks(bookID) {
             if (err) {
                 reject(err);
             } else {
-                resolve(doc);
+                var objects = {};
+                doc.forEach(o => objects[o._id] = o);
+                var dupArray = bookID.map(id => objects[id]);
+                // here you have objects with duplicates in dupArray:
+                console.log(dupArray);
+                resolve(dupArray);
             }
         });
 

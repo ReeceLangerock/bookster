@@ -12,7 +12,7 @@ function getBooks() {
             $('#bookResultContainer').append($(
                 `<div class = 'resultItem'><form method = "POST" action = '/user/add-book'><span class= "resultSpan">
                 <img src = "${imgURL}">
-                <p><i><b>${response[i].volumeInfo.title}</b></i>\n${response[i].volumeInfo.authors}</p>
+                <p><i><b>${response[i].volumeInfo.title}</b></i><br>${response[i].volumeInfo.authors}</p>
 
                 <input type = "submit" class = "addButton" value = "&#10004">
                 </span>

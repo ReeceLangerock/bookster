@@ -23,24 +23,49 @@
         <main>
 
           <div class = "formContainer">
+            <h1>Settings</h1>
             <form method = "POST" action = '/user/settings'>
-            First name:<br>
+            <h4>First name:</h4>
             <input type="text" name="firstName" value="<%=userData.firstName %>"><br>
-            Last name:<br>
+            <h4>Last name:</h4>
             <input type="text" name="lastName" value="<%=userData.lastName %>"><br>
-            City:<br>
+            <h4>City:</h4>
             <input type="text" name="city" value="<%=userData.City %>"><br>
-            State:<br>
+            <h4>State:</h4>
             <input type="text" name="state" value="<%=userData.State %>"><br>
             <input type="submit" value="Save Changes">
 
           </form>
-            <div>
+        </div>
+
+              <!-- for Req.flash -->
+              <% if(error && error.length > 0){ %>
+                <div class = "flashPage" id = "flashPageID">
+            <div class = "ui">
+              <p><%= error %></p>
+            </div>
+          </div>
+            <% } %>
+            <% if(success && success.length > 0){ %>
+              <div class = "flashPage" id = "flashPageID">
+              <div class = "ui">
+                <p><%= success[0] %></p><br>
+                <p><%= success[1] %></p>
+              </div>
+            </div>
+            <% } %>
 
         </main>
     </div>
 </body>
 <!--import footer -->
 <%- include ./partials/footer.ejs %>
+<script>
+    document.onclick = function(event) {
+        if (document.getElementById('flashPageID')) {
+            document.getElementById('flashPageID').style.display = "none";
+        }
+    }
+</script>
 
 </html>
