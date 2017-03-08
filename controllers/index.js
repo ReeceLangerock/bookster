@@ -51,6 +51,12 @@ router.get('/', function(req, res) {
 // handle sending of trade requests
 router.post('/send-request', function(req, res) {
 
+    getUserBooks(req.user).then(function(response, error){
+      if (response.books.length <= 0){
+        req.flash('error', "You can't send a response if you don't own a book!\nClick anywhere to close.")
+        res.redirect('back');
+      }
+    })
     var bookToSendID = req.body.bookToSendID
     var bookToReceiveID = req.body.bookToReceiveID;
     var bookOwnerID = req.body.bookOwnerID;
@@ -127,7 +133,7 @@ function addRequestToSelf(id, bookToSendID, bookToReceiveID, bookOwnerID, reques
                         'requestID': requestID,
                         'bookToSend': bookToSendID,
                         'bookToReceive': bookToReceiveID,
-                        'bookOwnerID': bookOwnerID
+                        'bookOwnerID': id
                     }
                 }
             },
