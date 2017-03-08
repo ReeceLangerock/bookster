@@ -59,7 +59,7 @@ router.post('/send-request', function(req, res) {
     var pendingRequestProm = checkForRequest("requestsPending.bookToReceive", req.user.mongoID, bookToReceiveID);
     var pendingSendProm = checkForRequest("requestsPending.bookToSend", req.user.mongoID, bookToSendID);
     var sentRequestProm = checkForRequest("requestsSent.bookToReceive", req.user.mongoID, bookToReceiveID);
-    var sentSendProm = checkForRequest("requestsSent.bookToReceive", req.user.mongoID, bookToSendID);
+    var sentSendProm = checkForRequest("requestsSent.bookToSend", req.user.mongoID, bookToSendID);
     Promise.all([pendingRequestProm, pendingSendProm, sentRequestProm, sentSendProm]).then(function(responses, error) {
         if (responses[0] == "GOOD_TO_GO" && responses[1] == "GOOD_TO_GO" && responses[2] == "GOOD_TO_GO" && responses[3] == "GOOD_TO_GO") {
             //if the response wasn't found add a sent to request to current user and pending request to other user
