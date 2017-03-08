@@ -3,12 +3,11 @@ var Auth0Strategy = require('passport-auth0');
 var express = require('express');
 var passport = require('passport');
 var router = express.Router();
-var config = require('../config');
 var userModel = require('../models/userModel');
 var session = require('express-session');
 var passport = require('passport');
 var ObjectID = require('mongodb').ObjectID;
-router.use(session(config.getPassportSecret()));
+router.use(session({secret: process.env.PASSPORT_SECRET}));
 router.use(passport.initialize());
 router.use(passport.session());
 
@@ -16,9 +15,9 @@ router.use(passport.session());
 //google strategy
 passport.use(new Auth0Strategy({
         domain: 'librus.auth0.com',
-        clientID: config.getAuth0ClientId(),
-        clientSecret: config.getAuth0ClientSecret(),
-        callbackURL: 'http://localhost:3000/auth/callback'
+        clientID: process.env.AUTH0_CLIENT_ID,
+        clientSecret: process.env.AUTH0_CLIENT_SECRET,
+        callbackURL: 'https://bookster-srl.herokuapp.com/auth/callback'
     },
     function(accessToken, refreshToken, extraParams, profile, done) {
         // accessToken is the token to call Auth0 API (not needed in the most cases)

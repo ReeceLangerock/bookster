@@ -4,15 +4,14 @@ var mongoose = require('mongoose');
 var path = require('path');
 var port = process.env.PORT || 3000;
 var app = express();
-var config = require('./config');
 var passport = require('passport');
 var flash = require("connect-flash");
 var session = require('express-session');
 
 
-mongoose.connect('mongodb://'+config.getMongoUser()+':'+config.getMongoPass()+'@ds111940.mlab.com:11940/bookster');
+//mongoose.connect('mongodb://'+config.getMongoUser()+':'+config.getMongoPass()+'@ds111940.mlab.com:11940/bookster');
 //below mongoose.connect saved for when moving to heroku
-//mongoose.connect(`mongodb://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@ds111940.mlab.com:11940/bookster`);
+mongoose.connect(`mongodb://${process.env.MONGO_USERNAME}:${process.env.MONGO_PASSWORD}@ds111940.mlab.com:11940/bookster`);
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection eror:'));
 db.once('open', function(){
@@ -26,7 +25,7 @@ app.set('view engine', 'ejs');
 
 
 //passport setup
-app.use(session(config.getPassportSecret()));
+app.use(session({secret: process.env.PASSPORT_SECRET}));
 app.use(passport.initialize());
 app.use(passport.session());
 
