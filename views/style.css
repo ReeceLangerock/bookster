@@ -425,6 +425,27 @@ footer a {
     margin: 0px;
 }
 
+/*404 STYLING */
+.container404{
+
+  color: #393E41;
+  background-color: #889696;
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 25%;
+  border: 3px solid #393E41;
+  border-radius: 8px;
+}
+
+.page404{
+  margin:50px;
+  text-align: center;
+}
+.page404 h1{
+  font-size: 80px;
+}
+
 /*RESPONSIVENESS */
 @media screen and (max-width:720px) {
 
