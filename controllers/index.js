@@ -167,7 +167,7 @@ function sendRequestToOtherUser(id, bookToSendID, bookToReceiveID, bookOwnerID, 
 
 function getAllBooks() {
     return new Promise(function(resolve, reject) {
-        bookModel.find({}.sort(-1),
+        bookModel.find({}).sort(-1),
             function(err, doc) {
                 if (err) {
                     reject(err);
