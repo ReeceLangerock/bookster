@@ -11,7 +11,6 @@
 </head>
 <html>
 
-
 <body>
     <div class='container'>
         <!--import navbar -->
@@ -21,25 +20,24 @@
         <%- include ./partials/navigation.ejs %>
         <%  } %>
         <main>
-          <div class = "tradeContainer">
 
+          <div class = "tradeContainer">
             <div class = "pendingTradesContainer">
               <h1>Trades Offers Received</h1>
 
               <% for(let i = 0; i < requestPendingBooksOffered.length; i++) { %>
                 <div class = "tradeItemContainer">
-                <div class = 'tradeItem'>
+                  <div class = 'tradeItem'>
+                    <div class = 'tradeSubItem'>
+                    <h5>Offer: <%=requestPendingBooksOffered[i].title %></h5>
+                    <img src = "<%=requestPendingBooksOffered[i].bookImageURL %>">
+
+                  </div>
                   <div class = 'tradeSubItem'>
-                <h5>Offer: <%=requestPendingBooksOffered[i].title %></h5>
-                <img src = "<%=requestPendingBooksOffered[i].bookImageURL %>">
-
-                </div>
-
-                <div class = 'tradeSubItem'>
-                <h5>Receive: <%=requestPendingBooksReceiving[i].title %></h5>
-                <img src = "<%=requestPendingBooksReceiving[i].bookImageURL %>">
-                </div>
-                </div>
+                    <h5>Receive: <%=requestPendingBooksReceiving[i].title %></h5>
+                    <img src = "<%=requestPendingBooksReceiving[i].bookImageURL %>">
+                  </div>
+                  </div>
                   <div class = "formSpan">
                   <form method = 'POST' action = '/trades/accept'>
                     <input type = 'hidden' name = 'requestToAccept' value = '<%=requestPendingArray[i].requestID %>'>
@@ -57,9 +55,6 @@
               </form>
               </div>
             </div>
-
-
-
           <%  } %>
             </div>
 
@@ -121,6 +116,4 @@
         }
     }
 </script>
-
-
 </html>

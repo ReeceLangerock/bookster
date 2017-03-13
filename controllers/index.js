@@ -2,6 +2,7 @@
 var express = require('express');
 var router = express.Router();
 var mongoose = require('mongoose');
+var db = mongoose.connection;
 var ObjectID = require('mongodb').ObjectID;
 var userModel = require('../models/userModel');
 var bookModel = require('../models/bookModel');
@@ -21,7 +22,6 @@ router.get('/', function(req, res) {
     }
     // get all the books
     var allBooksProm = getAllBooks();
-
 
     Promise.all([userBooksProm, allBooksProm]).then(function(responses, error) {
         userBooks = responses[0];

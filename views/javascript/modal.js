@@ -7,13 +7,9 @@ $(document).ready(function() {
   modalBookReceiveIdValue = document.getElementById('modalBookReceiveId');
     modalBookOwnerIdValue = document.getElementById('modalBookOwnerID');
 
-
   // Get the button that opens the modal
   buttons = document.querySelectorAll(".requestButton");
   buttons.forEach(button => button.addEventListener('click', display));
-
-
-
 
   // Get the <span> element that closes the modal
   span = document.getElementsByClassName("close")[0];

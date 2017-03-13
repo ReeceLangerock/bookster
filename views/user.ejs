@@ -41,7 +41,6 @@
             <div id = "bookResultContainer">
             </div>
 
-
             </div>
 
       </div>
@@ -53,32 +52,30 @@
             <h1><%=userBooks[i].title %></h1>
             <img src = "<%=userBooks[i].bookImageURL %>">
             <p>by: <%=userBooks[i].author %></p>
-
           </div>
 
+        <% } %>
+      <% } %>
+          </div>
 
-            <% } %>
-              <% } %>
-            </div>
-
-            </div>
+      </div>
 
             <!-- for Req.flash -->
-            <% if(error && error.length > 0){ %>
-              <div class = "flashPage" id = "flashPageID">
+        <% if(error && error.length > 0){ %>
+          <div class = "flashPage" id = "flashPageID">
           <div class = "ui">
             <p><%= error %></p>
           </div>
         </div>
-          <% } %>
-          <% if(success && success.length > 0){ %>
-            <div class = "flashPage" id = "flashPageID">
-            <div class = "ui">
-              <p><%= success[0] %></p><br>
-              <p><%= success[1] %></p>
+        <% } %>
+        <% if(success && success.length > 0){ %>
+          <div class = "flashPage" id = "flashPageID">
+          <div class = "ui">
+            <p><%= success[0] %></p><br>
+            <p><%= success[1] %></p>
             </div>
           </div>
-          <% } %>
+        <% } %>
 
         </main>
       </div>
@@ -93,6 +90,5 @@
     }
 </script>
 <script class = 'modal-input' type="text/javascript" src="./javascript/booksearch.js"></script>
-
 
 </html>

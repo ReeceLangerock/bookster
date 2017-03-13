@@ -12,7 +12,7 @@ router.use(passport.initialize());
 router.use(passport.session());
 
 
-//google strategy
+//auth0 strategy
 passport.use(new Auth0Strategy({
         domain: 'librus.auth0.com',
         clientID: process.env.AUTH0_CLIENT_ID,
@@ -41,7 +41,7 @@ passport.deserializeUser(function(user, callback) {
         firstName: '',
         lastName: ''
     };
-
+    // find which provider user is logging in from and store relevant info
     switch (user.provider) {
         case 'facebook':
             providerQuery = 'fbID';
@@ -64,6 +64,8 @@ passport.deserializeUser(function(user, callback) {
     var value = user.identities[0].user_id;
     var query = {};
     query[name] = value;
+    // originally intended to include a feature to link different social accounts,
+    //never got that far.
     userModel.findOne(
         query,
         function(err, doc) {

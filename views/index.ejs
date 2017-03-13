@@ -20,11 +20,10 @@
         <%  } %>
         <main>
 
-
-
         <h1 class = "mainTitle">All Books</h1>
           <div class = "bookContainer">
 
+            <!-- add book display divs -->
             <% if(books) { %>
               <% for(var i = 0; i < books.length; i++){ %>
                 <div class = "bookItem">
@@ -32,16 +31,15 @@
                   <img src = "<%=books[i].bookImageURL %>">
                   <p>by: <%=books[i].author %></p>
                   <% if(userID != false) { %>
-                  <% if(!books[i].ownedBy.includes(userID)){%>
+                    <% if(!books[i].ownedBy.includes(userID)){%>
                     <button data-bookOwnerID = "<%=books[i].ownedBy %>" data-bookID ="<%=books[i]['_id'] %>" class = "requestButton">Request Trade</button>
                     <% } %>
                   <% } %>
 
                 </div>
 
-
-                  <% } %>
-                    <% } %>
+              <% } %>
+            <% } %>
                   </main>
                 </div>
               </div>
@@ -78,12 +76,12 @@
               <!-- for Req.flash -->
               <% if(error && error.length > 0){ %>
                 <div class = "flashPage" id = "flashPageID">
-            <div class = "ui error">
-              <p><%= error %></p>
-            </div>
-          </div>
-            <% } %>
-            <% if(success && success.length > 0){ %>
+                  <div class = "ui error">
+                    <p><%= error %></p>
+                  </div>
+                </div>
+              <% } %>
+              <% if(success && success.length > 0){ %>
               <div class = "flashPage" id = "flashPageID">
               <div class = "ui success">
                 <h1>success!</h1>
@@ -92,7 +90,6 @@
               </div>
             </div>
             <% } %>
-
         </main>
       </div>
     </div>

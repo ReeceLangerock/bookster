@@ -1,3 +1,4 @@
+//SETUP
 var express = require('express');
 var router = express.Router();
 var mongoose = require('mongoose');
@@ -9,8 +10,10 @@ router.use(bodyParser.urlencoded({
 }));
 router.use(bodyParser.json());
 
+
 router.get('/', function(req, res) {
 
+    //if user is singed in
     if (req.isAuthenticated()) {
         getUserData(req.user.mongoID).then(function(response, error) {
             res.render('user-settings', {
@@ -28,6 +31,7 @@ router.get('/', function(req, res) {
 });
 
 router.post('/', function(req, res){
+  //accept post for user data and update db
   updateUserDate(req.user.mongoID, req.body).then(function(response,error){
     if(response == "SETTINGS_UPDATED" ){
       req.flash('success', 'Your settings have been updated.\nClick anywhere to close.')
@@ -38,15 +42,14 @@ router.post('/', function(req, res){
         res.redirect('back');
       }
 
-
   })
 })
 
 
 
 function updateUserDate(user, data){
-
   return new Promise(function(resolve, reject) {
+    //find the user and update
     userModel.findOneAndUpdate({ _id: user},
          {$set:   {firstName: data.firstName,
         lastName: data.lastName,
@@ -63,7 +66,6 @@ function updateUserDate(user, data){
             }
         });
   });
-
 }
 
 

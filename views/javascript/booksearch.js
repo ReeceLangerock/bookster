@@ -1,8 +1,11 @@
 function getBooks() {
     var searchTerm = document.getElementById('searchInput').value;
 
+    //send query to server for book list
     postQuery(searchTerm).then(function(response, error) {
+        // clear the container of any previous books
         $("#bookResultContainer").empty();
+        // append book data to container
         for (var i = 0; i < response.length; i++) {
             var imgURL = (typeof response[i].volumeInfo.imageLinks != "undefined") ? response[i].volumeInfo.imageLinks.smallThumbnail : "";
             var bookTitle = response[i].volumeInfo.title;
@@ -25,6 +28,7 @@ function getBooks() {
     })
 }
 
+// send post for book data
 function postQuery(searchQuery) {
     return new Promise(function(resolve, reject) {
         var url = "/user";

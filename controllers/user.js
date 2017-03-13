@@ -1,3 +1,4 @@
+//setup
 var express = require('express');
 var router = express.Router();
 var request = require('request');
@@ -14,11 +15,12 @@ router.use(bodyParser.json());
 
 router.get('/', function(req, res) {
     if (req.isAuthenticated()) {
+        //get the user data and their book data
         var userDataProm = getUser(req.user.mongoID);
         var userBooksProm = getUsersBooks(req.user.mongoID);
 
-        Promise.all([userDataProm, userBooksProm]).then(function(responses, error) {
 
+        Promise.all([userDataProm, userBooksProm]).then(function(responses, error) {
             var userData = responses[0];
             var userBooks = responses[1];
             res.render('user', {
@@ -41,17 +43,11 @@ router.get('/', function(req, res) {
     }
 });
 
-router.post('/', function(req, res) { // refactor this to res.json
+router.post('/', function(req, res) {
     searchForBook(req.body.bookTitle).then(function(response, error) {
 
         res.json(response);
         res.end();
-        /*res.render('user', {
-            authenticatedUser: true,
-            bookData: response,
-            userBooks: false,
-            userData: false
-        });*/
 
     })
 })
@@ -105,6 +101,7 @@ function getUser(userID) {
 
 function addBook(bookToAdd, userID) {
     return new Promise(function(resolve, reject) {
+        // search the book collection by book isbn
         bookModel.findOne({
                 isbn13: bookToAdd.bookID
             },
@@ -112,6 +109,7 @@ function addBook(bookToAdd, userID) {
                 if (err) {
                     reject(err);
                 } else if (doc) {
+                    // if the user doesn't own the book
                     if (doc.ownedBy.includes(userID) == false) {
                         bookModel.findOneAndUpdate({
                             isbn13: bookToAdd.bookID
@@ -124,7 +122,7 @@ function addBook(bookToAdd, userID) {
                                 console.log(err);
                             }
                         });
-
+                        //update the users books
                         userModel.findOneAndUpdate({
                             '_id': userID
                         }, {
@@ -141,8 +139,10 @@ function addBook(bookToAdd, userID) {
                         resolve("ALREADY_OWNED")
                     }
                 } else {
+                    // create a new book
                     var tempID = new ObjectID();
                     bookModel.schema.methods.newBook(tempID, bookToAdd, userID);
+                    //add the book to the user
                     userModel.findOneAndUpdate({
                         '_id': userID
                     }, {
