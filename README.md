@@ -6,6 +6,8 @@ https://bookster-srl.herokuapp.com/
 - Node/express
 - EJS / CSS
 - MongoDB / Mongoose
+- Auth0 / Passport / Express-session
+- Connect-Flash
 
 
 ### App Objective
